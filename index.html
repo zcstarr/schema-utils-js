@@ -1,0 +1,3339 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@open-rpc/schema-utils-js</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@open-rpc/schema-utils-js</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> @open-rpc/schema-utils-js</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="openrpc-utils-for-javascript">OpenRPC Utils For Javascript</h1>
+				<p><a href="https://dependabot.com"><img src="https://api.dependabot.com/badges/status?host=github&repo=open-rpc/schema-utils-js" alt="Dependabot Status"></a>
+				<a href="https://codecov.io/gh/open-rpc/schema-utils-js"><img src="https://codecov.io/gh/open-rpc/schema-utils-js/branch/master/graph/badge.svg" alt="codecov"></a></p>
+				<h3 id="contributing">Contributing</h3>
+				<p>How to contribute, build and release are outlined in <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>, <a href="BUILDING.md">BUILDING.md</a> and <a href="RELEASING.md">RELEASING.md</a> respectively. Commits in this repository follow the <a href="CONVENTIONAL_COMMITS.md">CONVENTIONAL_COMMITS.md</a> specification.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/binding.html" class="tsd-kind-icon">Binding</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/blob.html" class="tsd-kind-icon">Blob</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/body.html" class="tsd-kind-icon">Body</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/codegenerator.html" class="tsd-kind-icon">Code<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/contentdescriptornotfoundinmethoderror.html" class="tsd-kind-icon">Content<wbr>Descriptor<wbr>Not<wbr>Found<wbr>InMethod<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/coveragemap.html" class="tsd-kind-icon">Coverage<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/coveragesummary.html" class="tsd-kind-icon">Coverage<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/eventemitter.html" class="tsd-kind-icon">Event<wbr>Emitter</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/fetcherror.html" class="tsd-kind-icon">Fetch<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/filecoverage.html" class="tsd-kind-icon">File<wbr>Coverage</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/headers.html" class="tsd-kind-icon">Headers</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/hub.html" class="tsd-kind-icon">Hub</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/methodcallparametervalidationerror.html" class="tsd-kind-icon">Method<wbr>Call<wbr>Parameter<wbr>Validation<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/methodcallvalidator.html" class="tsd-kind-icon">Method<wbr>Call<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-external">
+						<a href="classes/nodepath.html" class="tsd-kind-icon">Node<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/openrpcdocumentdereferencingerror.html" class="tsd-kind-icon">OpenRPCDocument<wbr>Dereferencing<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/openrpcdocumentvalidationerror.html" class="tsd-kind-icon">OpenRPCDocument<wbr>Validation<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/request.html" class="tsd-kind-icon">Request</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/response.html" class="tsd-kind-icon">Response</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/scope.html" class="tsd-kind-icon">Scope</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/aliases.html" class="tsd-kind-icon">Aliases</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/anytypeannotation.html" class="tsd-kind-icon">Any<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/argumentplaceholder.html" class="tsd-kind-icon">Argument<wbr>Placeholder</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/arrayexpression.html" class="tsd-kind-icon">Array<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/arraypattern.html" class="tsd-kind-icon">Array<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/arraytypeannotation.html" class="tsd-kind-icon">Array<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/arrowfunctionexpression.html" class="tsd-kind-icon">Arrow<wbr>Function<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/assignmentexpression.html" class="tsd-kind-icon">Assignment<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/assignmentpattern.html" class="tsd-kind-icon">Assignment<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/awaitexpression.html" class="tsd-kind-icon">Await<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/babelfilemetadata.html" class="tsd-kind-icon">Babel<wbr>File<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/babelfilemodulesmetadata.html" class="tsd-kind-icon">Babel<wbr>File<wbr>Modules<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/babelfileresult.html" class="tsd-kind-icon">Babel<wbr>File<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/bigintliteral.html" class="tsd-kind-icon">Big<wbr>Int<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/binaryexpression.html" class="tsd-kind-icon">Binary<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/bindexpression.html" class="tsd-kind-icon">Bind<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/blockstatement.html" class="tsd-kind-icon">Block<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/booleanliteral.html" class="tsd-kind-icon">Boolean<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/booleanliteraltypeannotation.html" class="tsd-kind-icon">Boolean<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/booleantypeannotation.html" class="tsd-kind-icon">Boolean<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/branchmapping.html" class="tsd-kind-icon">Branch<wbr>Mapping</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/breakstatement.html" class="tsd-kind-icon">Break<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/callexpression.html" class="tsd-kind-icon">Call<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/catfunction.html" class="tsd-kind-icon">Cat<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/catchclause.html" class="tsd-kind-icon">Catch<wbr>Clause</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/chmodfunction.html" class="tsd-kind-icon">Chmod<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classbody.html" class="tsd-kind-icon">Class<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classdeclaration.html" class="tsd-kind-icon">Class<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classexpression.html" class="tsd-kind-icon">Class<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classimplements.html" class="tsd-kind-icon">Class<wbr>Implements</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classmethod.html" class="tsd-kind-icon">Class<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classprivatemethod.html" class="tsd-kind-icon">Class<wbr>Private<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classprivateproperty.html" class="tsd-kind-icon">Class<wbr>Private<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/classproperty.html" class="tsd-kind-icon">Class<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/commentblock.html" class="tsd-kind-icon">Comment<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/commentline.html" class="tsd-kind-icon">Comment<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/conditionalexpression.html" class="tsd-kind-icon">Conditional<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/configapi.html" class="tsd-kind-icon">ConfigAPI</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/configitem.html" class="tsd-kind-icon">Config<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/contactobject.html" class="tsd-kind-icon">Contact<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/contentdescriptorobject.html" class="tsd-kind-icon">Content<wbr>Descriptor<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/continuestatement.html" class="tsd-kind-icon">Continue<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/copyfunction.html" class="tsd-kind-icon">Copy<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/copyoptions.html" class="tsd-kind-icon">Copy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/copyoptionssync.html" class="tsd-kind-icon">Copy<wbr>Options<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/coverage.html" class="tsd-kind-icon">Coverage</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/coveragemapdata.html" class="tsd-kind-icon">Coverage<wbr>Map<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/coveragesummarydata.html" class="tsd-kind-icon">Coverage<wbr>Summary<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/createconfigitemoptions.html" class="tsd-kind-icon">Create<wbr>Config<wbr>Item<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/debuggerstatement.html" class="tsd-kind-icon">Debugger<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declareclass.html" class="tsd-kind-icon">Declare<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declareexportalldeclaration.html" class="tsd-kind-icon">Declare<wbr>Export<wbr>All<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declareexportdeclaration.html" class="tsd-kind-icon">Declare<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declarefunction.html" class="tsd-kind-icon">Declare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declareinterface.html" class="tsd-kind-icon">Declare<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declaremodule.html" class="tsd-kind-icon">Declare<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declaremoduleexports.html" class="tsd-kind-icon">Declare<wbr>Module<wbr>Exports</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declareopaquetype.html" class="tsd-kind-icon">Declare<wbr>Opaque<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declaretypealias.html" class="tsd-kind-icon">Declare<wbr>Type<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declarevariable.html" class="tsd-kind-icon">Declare<wbr>Variable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/declaredpredicate.html" class="tsd-kind-icon">Declared<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/decorator.html" class="tsd-kind-icon">Decorator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/decoratorspluginoptions.html" class="tsd-kind-icon">Decorators<wbr>Plugin<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/directive.html" class="tsd-kind-icon">Directive</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/directiveliteral.html" class="tsd-kind-icon">Directive<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/dirsfunction.html" class="tsd-kind-icon">Dirs<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/doexpression.html" class="tsd-kind-icon">Do<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/dowhilestatement.html" class="tsd-kind-icon">Do<wbr>While<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/echofunction.html" class="tsd-kind-icon">Echo<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/emptystatement.html" class="tsd-kind-icon">Empty<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/emptytypeannotation.html" class="tsd-kind-icon">Empty<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="interfaces/envfunction.html" class="tsd-kind-icon">Env<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/errorobject.html" class="tsd-kind-icon">Error<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exampleobject.html" class="tsd-kind-icon">Example<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/examplepairingobject.html" class="tsd-kind-icon">Example<wbr>Pairing<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/execfunction.html" class="tsd-kind-icon">Exec<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/execoptions.html" class="tsd-kind-icon">Exec<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/execoutputreturnvalue.html" class="tsd-kind-icon">Exec<wbr>Output<wbr>Return<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/existstypeannotation.html" class="tsd-kind-icon">Exists<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exportalldeclaration.html" class="tsd-kind-icon">Export<wbr>All<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exportdefaultdeclaration.html" class="tsd-kind-icon">Export<wbr>Default<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exportdefaultspecifier.html" class="tsd-kind-icon">Export<wbr>Default<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exportnameddeclaration.html" class="tsd-kind-icon">Export<wbr>Named<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exportnamespacespecifier.html" class="tsd-kind-icon">Export<wbr>Namespace<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/exportspecifier.html" class="tsd-kind-icon">Export<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/expressionstatement.html" class="tsd-kind-icon">Expression<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/externaldocumentationobject.html" class="tsd-kind-icon">External<wbr>Documentation<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/file.html" class="tsd-kind-icon">File</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/filecoveragedata.html" class="tsd-kind-icon">File<wbr>Coverage<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/flowpluginoptions.html" class="tsd-kind-icon">Flow<wbr>Plugin<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/forinstatement.html" class="tsd-kind-icon">For<wbr>InStatement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/forofstatement.html" class="tsd-kind-icon">For<wbr>OfStatement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/forstatement.html" class="tsd-kind-icon">For<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/functiondeclaration.html" class="tsd-kind-icon">Function<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/functionexpression.html" class="tsd-kind-icon">Function<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/functionmapping.html" class="tsd-kind-icon">Function<wbr>Mapping</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/functiontypeannotation.html" class="tsd-kind-icon">Function<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/functiontypeparam.html" class="tsd-kind-icon">Function<wbr>Type<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/generatoroptions.html" class="tsd-kind-icon">Generator<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/generatorresult.html" class="tsd-kind-icon">Generator<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/generictypeannotation.html" class="tsd-kind-icon">Generic<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/grepfunction.html" class="tsd-kind-icon">Grep<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/headfunction.html" class="tsd-kind-icon">Head<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/headoptions.html" class="tsd-kind-icon">Head<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/identifier.html" class="tsd-kind-icon">Identifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/ifstatement.html" class="tsd-kind-icon">If<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/import.html" class="tsd-kind-icon">Import</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/importdeclaration.html" class="tsd-kind-icon">Import<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/importdefaultspecifier.html" class="tsd-kind-icon">Import<wbr>Default<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/importnamespacespecifier.html" class="tsd-kind-icon">Import<wbr>Namespace<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/importspecifier.html" class="tsd-kind-icon">Import<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/inferredpredicate.html" class="tsd-kind-icon">Inferred<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/infoobject.html" class="tsd-kind-icon">Info<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/interfacedeclaration.html" class="tsd-kind-icon">Interface<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/interfaceextends.html" class="tsd-kind-icon">Interface<wbr>Extends</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/interfacetypeannotation.html" class="tsd-kind-icon">Interface<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/interpreterdirective.html" class="tsd-kind-icon">Interpreter<wbr>Directive</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/intersectiontypeannotation.html" class="tsd-kind-icon">Intersection<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsonschema4.html" class="tsd-kind-icon">JSONSchema4</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsonschema6.html" class="tsd-kind-icon">JSONSchema6</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsonschema7.html" class="tsd-kind-icon">JSONSchema7</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsonschema7array.html" class="tsd-kind-icon">JSONSchema7<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxattribute.html" class="tsd-kind-icon">JSXAttribute</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxclosingelement.html" class="tsd-kind-icon">JSXClosing<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxclosingfragment.html" class="tsd-kind-icon">JSXClosing<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxelement.html" class="tsd-kind-icon">JSXElement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxemptyexpression.html" class="tsd-kind-icon">JSXEmpty<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxexpressioncontainer.html" class="tsd-kind-icon">JSXExpression<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxfragment.html" class="tsd-kind-icon">JSXFragment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxidentifier.html" class="tsd-kind-icon">JSXIdentifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxmemberexpression.html" class="tsd-kind-icon">JSXMember<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxnamespacedname.html" class="tsd-kind-icon">JSXNamespaced<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxopeningelement.html" class="tsd-kind-icon">JSXOpening<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxopeningfragment.html" class="tsd-kind-icon">JSXOpening<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxspreadattribute.html" class="tsd-kind-icon">JSXSpread<wbr>Attribute</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxspreadchild.html" class="tsd-kind-icon">JSXSpread<wbr>Child</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/jsxtext.html" class="tsd-kind-icon">JSXText</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/labeledstatement.html" class="tsd-kind-icon">Labeled<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/licenseobject.html" class="tsd-kind-icon">License<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/linkfunction.html" class="tsd-kind-icon">Link<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/linkobject.html" class="tsd-kind-icon">Link<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/listfunction.html" class="tsd-kind-icon">List<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/location.html" class="tsd-kind-icon">Location</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/logicalexpression.html" class="tsd-kind-icon">Logical<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/memberexpression.html" class="tsd-kind-icon">Member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/metaproperty.html" class="tsd-kind-icon">Meta<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/methodobject.html" class="tsd-kind-icon">Method<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/mixedtypeannotation.html" class="tsd-kind-icon">Mixed<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/mkdirfunction.html" class="tsd-kind-icon">Mkdir<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/movefunction.html" class="tsd-kind-icon">Move<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/moveoptions.html" class="tsd-kind-icon">Move<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/newexpression.html" class="tsd-kind-icon">New<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/noop.html" class="tsd-kind-icon">Noop</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/nullliteral.html" class="tsd-kind-icon">Null<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/nullliteraltypeannotation.html" class="tsd-kind-icon">Null<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/nullabletypeannotation.html" class="tsd-kind-icon">Nullable<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/numberliteraltypeannotation.html" class="tsd-kind-icon">Number<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/numbertypeannotation.html" class="tsd-kind-icon">Number<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/numericliteral.html" class="tsd-kind-icon">Numeric<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objectexpression.html" class="tsd-kind-icon">Object<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objectmethod.html" class="tsd-kind-icon">Object<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objectpattern.html" class="tsd-kind-icon">Object<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objectproperty.html" class="tsd-kind-icon">Object<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objecttypeannotation.html" class="tsd-kind-icon">Object<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objecttypecallproperty.html" class="tsd-kind-icon">Object<wbr>Type<wbr>Call<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objecttypeindexer.html" class="tsd-kind-icon">Object<wbr>Type<wbr>Indexer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objecttypeinternalslot.html" class="tsd-kind-icon">Object<wbr>Type<wbr>Internal<wbr>Slot</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objecttypeproperty.html" class="tsd-kind-icon">Object<wbr>Type<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/objecttypespreadproperty.html" class="tsd-kind-icon">Object<wbr>Type<wbr>Spread<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/oneofobject.html" class="tsd-kind-icon">One<wbr>OfObject</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/opaquetype.html" class="tsd-kind-icon">Opaque<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/openrpc.html" class="tsd-kind-icon">OpenRPC</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/optionalcallexpression.html" class="tsd-kind-icon">Optional<wbr>Call<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/optionalmemberexpression.html" class="tsd-kind-icon">Optional<wbr>Member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/parenthesizedexpression.html" class="tsd-kind-icon">Parenthesized<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/parseroptions.html" class="tsd-kind-icon">Parser<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/partialconfig.html" class="tsd-kind-icon">Partial<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pathentry.html" class="tsd-kind-icon">Path<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pathentrystream.html" class="tsd-kind-icon">Path<wbr>Entry<wbr>Stream</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pipelinebarefunction.html" class="tsd-kind-icon">Pipeline<wbr>Bare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pipelineoperatorpluginoptions.html" class="tsd-kind-icon">Pipeline<wbr>Operator<wbr>Plugin<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pipelineprimarytopicreference.html" class="tsd-kind-icon">Pipeline<wbr>Primary<wbr>Topic<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pipelinetopicexpression.html" class="tsd-kind-icon">Pipeline<wbr>Topic<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/placeholder.html" class="tsd-kind-icon">Placeholder</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="interfaces/pluginobj.html" class="tsd-kind-icon">Plugin<wbr>Obj</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/popdirfunction.html" class="tsd-kind-icon">Pop<wbr>Dir<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/privatename.html" class="tsd-kind-icon">Private<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/program.html" class="tsd-kind-icon">Program</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/pushdirfunction.html" class="tsd-kind-icon">Push<wbr>Dir<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/qualifiedtypeidentifier.html" class="tsd-kind-icon">Qualified<wbr>Type<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/range.html" class="tsd-kind-icon">Range</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/readoptions.html" class="tsd-kind-icon">Read<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/readresult.html" class="tsd-kind-icon">Read<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/referenceobject.html" class="tsd-kind-icon">Reference<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/regexpliteral.html" class="tsd-kind-icon">Reg<wbr>Exp<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/removefunction.html" class="tsd-kind-icon">Remove<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/requestinit.html" class="tsd-kind-icon">Request<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/responseinit.html" class="tsd-kind-icon">Response<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/restelement.html" class="tsd-kind-icon">Rest<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/returnstatement.html" class="tsd-kind-icon">Return<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/schema.html" class="tsd-kind-icon">Schema</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/sedfunction.html" class="tsd-kind-icon">Sed<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/sequenceexpression.html" class="tsd-kind-icon">Sequence<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/serverobject.html" class="tsd-kind-icon">Server<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/shellconfig.html" class="tsd-kind-icon">Shell<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/shellreturnvalue.html" class="tsd-kind-icon">Shell<wbr>Return<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/simplecacheconfigurator.html" class="tsd-kind-icon">Simple<wbr>Cache<wbr>Configurator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/sortfunction.html" class="tsd-kind-icon">Sort<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/sourcelocation.html" class="tsd-kind-icon">Source<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/spreadelement.html" class="tsd-kind-icon">Spread<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/stringliteral.html" class="tsd-kind-icon">String<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/stringliteraltypeannotation.html" class="tsd-kind-icon">String<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/stringtypeannotation.html" class="tsd-kind-icon">String<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/super.html" class="tsd-kind-icon">Super</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/switchcase.html" class="tsd-kind-icon">Switch<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/switchstatement.html" class="tsd-kind-icon">Switch<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsanykeyword.html" class="tsd-kind-icon">TSAny<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsarraytype.html" class="tsd-kind-icon">TSArray<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsasexpression.html" class="tsd-kind-icon">TSAs<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsbooleankeyword.html" class="tsd-kind-icon">TSBoolean<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tscallsignaturedeclaration.html" class="tsd-kind-icon">TSCall<wbr>Signature<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsconditionaltype.html" class="tsd-kind-icon">TSConditional<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsconstructsignaturedeclaration.html" class="tsd-kind-icon">TSConstruct<wbr>Signature<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsconstructortype.html" class="tsd-kind-icon">TSConstructor<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsdeclarefunction.html" class="tsd-kind-icon">TSDeclare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsdeclaremethod.html" class="tsd-kind-icon">TSDeclare<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsenumdeclaration.html" class="tsd-kind-icon">TSEnum<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsenummember.html" class="tsd-kind-icon">TSEnum<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsexportassignment.html" class="tsd-kind-icon">TSExport<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsexpressionwithtypearguments.html" class="tsd-kind-icon">TSExpression<wbr>With<wbr>Type<wbr>Arguments</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsexternalmodulereference.html" class="tsd-kind-icon">TSExternal<wbr>Module<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsfunctiontype.html" class="tsd-kind-icon">TSFunction<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsimportequalsdeclaration.html" class="tsd-kind-icon">TSImport<wbr>Equals<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsimporttype.html" class="tsd-kind-icon">TSImport<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsindexsignature.html" class="tsd-kind-icon">TSIndex<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsindexedaccesstype.html" class="tsd-kind-icon">TSIndexed<wbr>Access<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsinfertype.html" class="tsd-kind-icon">TSInfer<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsinterfacebody.html" class="tsd-kind-icon">TSInterface<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsinterfacedeclaration.html" class="tsd-kind-icon">TSInterface<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsintersectiontype.html" class="tsd-kind-icon">TSIntersection<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsliteraltype.html" class="tsd-kind-icon">TSLiteral<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsmappedtype.html" class="tsd-kind-icon">TSMapped<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsmethodsignature.html" class="tsd-kind-icon">TSMethod<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsmoduleblock.html" class="tsd-kind-icon">TSModule<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsmoduledeclaration.html" class="tsd-kind-icon">TSModule<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsnamespaceexportdeclaration.html" class="tsd-kind-icon">TSNamespace<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsneverkeyword.html" class="tsd-kind-icon">TSNever<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsnonnullexpression.html" class="tsd-kind-icon">TSNon<wbr>Null<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsnullkeyword.html" class="tsd-kind-icon">TSNull<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsnumberkeyword.html" class="tsd-kind-icon">TSNumber<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsobjectkeyword.html" class="tsd-kind-icon">TSObject<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsoptionaltype.html" class="tsd-kind-icon">TSOptional<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsparameterproperty.html" class="tsd-kind-icon">TSParameter<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsparenthesizedtype.html" class="tsd-kind-icon">TSParenthesized<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tspropertysignature.html" class="tsd-kind-icon">TSProperty<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsqualifiedname.html" class="tsd-kind-icon">TSQualified<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsresttype.html" class="tsd-kind-icon">TSRest<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsstringkeyword.html" class="tsd-kind-icon">TSString<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tssymbolkeyword.html" class="tsd-kind-icon">TSSymbol<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsthistype.html" class="tsd-kind-icon">TSThis<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstupletype.html" class="tsd-kind-icon">TSTuple<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypealiasdeclaration.html" class="tsd-kind-icon">TSType<wbr>Alias<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeannotation.html" class="tsd-kind-icon">TSType<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeassertion.html" class="tsd-kind-icon">TSType<wbr>Assertion</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeliteral.html" class="tsd-kind-icon">TSType<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeoperator.html" class="tsd-kind-icon">TSType<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeparameter.html" class="tsd-kind-icon">TSType<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeparameterdeclaration.html" class="tsd-kind-icon">TSType<wbr>Parameter<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypeparameterinstantiation.html" class="tsd-kind-icon">TSType<wbr>Parameter<wbr>Instantiation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypepredicate.html" class="tsd-kind-icon">TSType<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypequery.html" class="tsd-kind-icon">TSType<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tstypereference.html" class="tsd-kind-icon">TSType<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsundefinedkeyword.html" class="tsd-kind-icon">TSUndefined<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsuniontype.html" class="tsd-kind-icon">TSUnion<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsunknownkeyword.html" class="tsd-kind-icon">TSUnknown<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tsvoidkeyword.html" class="tsd-kind-icon">TSVoid<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tagobject.html" class="tsd-kind-icon">Tag<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/taggedtemplateexpression.html" class="tsd-kind-icon">Tagged<wbr>Template<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tailfunction.html" class="tsd-kind-icon">Tail<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tailoptions.html" class="tsd-kind-icon">Tail<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="interfaces/templatebuilder.html" class="tsd-kind-icon">Template<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/templatebuilderoptions.html" class="tsd-kind-icon">Template<wbr>Builder<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/templateelement.html" class="tsd-kind-icon">Template<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/templateliteral.html" class="tsd-kind-icon">Template<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/thisexpression.html" class="tsd-kind-icon">This<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/thistypeannotation.html" class="tsd-kind-icon">This<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/throwstatement.html" class="tsd-kind-icon">Throw<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/totals.html" class="tsd-kind-icon">Totals</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/touchfunction.html" class="tsd-kind-icon">Touch<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/touchoptionsarray.html" class="tsd-kind-icon">Touch<wbr>Options<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/transformcaller.html" class="tsd-kind-icon">Transform<wbr>Caller</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/transformoptions.html" class="tsd-kind-icon">Transform<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/traversalcontext.html" class="tsd-kind-icon">Traversal<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="interfaces/traverseoptions.html" class="tsd-kind-icon">Traverse<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/trystatement.html" class="tsd-kind-icon">Try<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/tupletypeannotation.html" class="tsd-kind-icon">Tuple<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typealias.html" class="tsd-kind-icon">Type<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typeannotation.html" class="tsd-kind-icon">Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typecastexpression.html" class="tsd-kind-icon">Type<wbr>Cast<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typeparameter.html" class="tsd-kind-icon">Type<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typeparameterdeclaration.html" class="tsd-kind-icon">Type<wbr>Parameter<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typeparameterinstantiation.html" class="tsd-kind-icon">Type<wbr>Parameter<wbr>Instantiation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/typeoftypeannotation.html" class="tsd-kind-icon">Typeof<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/unaryexpression.html" class="tsd-kind-icon">Unary<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/uniontypeannotation.html" class="tsd-kind-icon">Union<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/uniqfunction.html" class="tsd-kind-icon">Uniq<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/updateexpression.html" class="tsd-kind-icon">Update<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/variabledeclaration.html" class="tsd-kind-icon">Variable<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/variabledeclarator.html" class="tsd-kind-icon">Variable<wbr>Declarator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/variance.html" class="tsd-kind-icon">Variance</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
+						<a href="interfaces/visitnodeobject.html" class="tsd-kind-icon">Visit<wbr>Node<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/voidtypeannotation.html" class="tsd-kind-icon">Void<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/whilestatement.html" class="tsd-kind-icon">While<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/withstatement.html" class="tsd-kind-icon">With<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/writefileoptions.html" class="tsd-kind-icon">Write<wbr>File<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/writeoptions.html" class="tsd-kind-icon">Write<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/writeresult.html" class="tsd-kind-icon">Write<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/yieldexpression.html" class="tsd-kind-icon">Yield<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#binary" class="tsd-kind-icon">Binary</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#block" class="tsd-kind-icon">Block</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#blockparent" class="tsd-kind-icon">Block<wbr>Parent</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#bodyinit" class="tsd-kind-icon">Body<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#class" class="tsd-kind-icon">Class</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#comment" class="tsd-kind-icon">Comment</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#completionstatement" class="tsd-kind-icon">Completion<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#conditional" class="tsd-kind-icon">Conditional</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#configfunction" class="tsd-kind-icon">Config<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#copyfilterasync" class="tsd-kind-icon">Copy<wbr>Filter<wbr>Async</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#copyfiltersync" class="tsd-kind-icon">Copy<wbr>Filter<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#declaration" class="tsd-kind-icon">Declaration</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#diffoptions" class="tsd-kind-icon">Diff<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#execcallback" class="tsd-kind-icon">Exec<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#exportdeclaration" class="tsd-kind-icon">Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#expression" class="tsd-kind-icon">Expression</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#expressionwrapper" class="tsd-kind-icon">Expression<wbr>Wrapper</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#fileparsecallback" class="tsd-kind-icon">File<wbr>Parse<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#fileresultcallback" class="tsd-kind-icon">File<wbr>Result<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#flow" class="tsd-kind-icon">Flow</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#flowbaseannotation" class="tsd-kind-icon">Flow<wbr>Base<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#flowdeclaration" class="tsd-kind-icon">Flow<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#flowpredicate" class="tsd-kind-icon">Flow<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#flowtype" class="tsd-kind-icon">Flow<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#for" class="tsd-kind-icon">For</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#forxstatement" class="tsd-kind-icon">ForXStatement</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#fssymlinktype" class="tsd-kind-icon">Fs<wbr>Symlink<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#function" class="tsd-kind-icon">Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#functionparent" class="tsd-kind-icon">Function<wbr>Parent</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#headerinit" class="tsd-kind-icon">Header<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#headersinit" class="tsd-kind-icon">Headers<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#immutable" class="tsd-kind-icon">Immutable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema4type" class="tsd-kind-icon">JSONSchema4<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema4typename" class="tsd-kind-icon">JSONSchema4<wbr>Type<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema4version" class="tsd-kind-icon">JSONSchema4<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema6definition" class="tsd-kind-icon">JSONSchema6<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema6type" class="tsd-kind-icon">JSONSchema6<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema6typename" class="tsd-kind-icon">JSONSchema6<wbr>Type<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema6version" class="tsd-kind-icon">JSONSchema6<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema7definition" class="tsd-kind-icon">JSONSchema7<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema7type" class="tsd-kind-icon">JSONSchema7<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema7typename" class="tsd-kind-icon">JSONSchema7<wbr>Type<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsonschema7version" class="tsd-kind-icon">JSONSchema7<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#jsx" class="tsd-kind-icon">JSX</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#lval" class="tsd-kind-icon">LVal</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#listener" class="tsd-kind-icon">Listener</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#literal" class="tsd-kind-icon">Literal</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#loop" class="tsd-kind-icon">Loop</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#method" class="tsd-kind-icon">Method</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#moduledeclaration" class="tsd-kind-icon">Module<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#modulespecifier" class="tsd-kind-icon">Module<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#node" class="tsd-kind-icon">Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#numberliteral" class="tsd-kind-icon">Number<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#objectmember" class="tsd-kind-icon">Object<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#parseresult" class="tsd-kind-icon">Parse<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#parserplugin" class="tsd-kind-icon">Parser<wbr>Plugin</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#parserpluginwithoptions" class="tsd-kind-icon">Parser<wbr>Plugin<wbr>With<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#pattern" class="tsd-kind-icon">Pattern</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#patternlike" class="tsd-kind-icon">Pattern<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#pluginitem" class="tsd-kind-icon">Plugin<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#pluginoptions" class="tsd-kind-icon">Plugin<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#plugintarget" class="tsd-kind-icon">Plugin<wbr>Target</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#private" class="tsd-kind-icon">Private</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#property" class="tsd-kind-icon">Property</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#publicreplacements" class="tsd-kind-icon">Public<wbr>Replacements</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#pureish" class="tsd-kind-icon">Pureish</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#regexliteral" class="tsd-kind-icon">Regex<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requestcache" class="tsd-kind-icon">Request<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requestcontext" class="tsd-kind-icon">Request<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requestcredentials" class="tsd-kind-icon">Request<wbr>Credentials</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requestinfo" class="tsd-kind-icon">Request<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requestmode" class="tsd-kind-icon">Request<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requestredirect" class="tsd-kind-icon">Request<wbr>Redirect</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#responsetype" class="tsd-kind-icon">Response<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#restproperty" class="tsd-kind-icon">Rest<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#scopable" class="tsd-kind-icon">Scopable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#shellarray" class="tsd-kind-icon">Shell<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#shellstring" class="tsd-kind-icon">Shell<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#simplecachecallback" class="tsd-kind-icon">Simple<wbr>Cache<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#simplecachekey" class="tsd-kind-icon">Simple<wbr>Cache<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#spreadproperty" class="tsd-kind-icon">Spread<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#statement" class="tsd-kind-icon">Statement</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#symlinktype" class="tsd-kind-icon">Symlink<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#tsentityname" class="tsd-kind-icon">TSEntity<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#tstype" class="tsd-kind-icon">TSType</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#tstypeelement" class="tsd-kind-icon">TSType<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#terminatorless" class="tsd-kind-icon">Terminatorless</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#testoptions" class="tsd-kind-icon">Test<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#touchoptionsliteral" class="tsd-kind-icon">Touch<wbr>Options<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#traversalancestors" class="tsd-kind-icon">Traversal<wbr>Ancestors</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#traversalhandler" class="tsd-kind-icon">Traversal<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#traversalhandlers" class="tsd-kind-icon">Traversal<wbr>Handlers</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#unarylike" class="tsd-kind-icon">Unary<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#userwhitespacable" class="tsd-kind-icon">User<wbr>Whitespacable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#visitnode" class="tsd-kind-icon">Visit<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#visitnodefunction" class="tsd-kind-icon">Visit<wbr>Node<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#visitor" class="tsd-kind-icon">Visitor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#while" class="tsd-kind-icon">While</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cat" class="tsd-kind-icon">cat</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#classes" class="tsd-kind-icon">classes</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#config" class="tsd-kind-icon">config</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cp" class="tsd-kind-icon">cp</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#dirs" class="tsd-kind-icon">dirs</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#echo" class="tsd-kind-icon">echo</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#env" class="tsd-kind-icon">env</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#exec" class="tsd-kind-icon">exec</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#expression" class="tsd-kind-icon">expression</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#find" class="tsd-kind-icon">find</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#grep" class="tsd-kind-icon">grep</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#head" class="tsd-kind-icon">head</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#ln" class="tsd-kind-icon">ln</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#ls" class="tsd-kind-icon">ls</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#mv" class="tsd-kind-icon">mv</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#popd" class="tsd-kind-icon">popd</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#pushd" class="tsd-kind-icon">pushd</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#rm" class="tsd-kind-icon">rm</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#sed" class="tsd-kind-icon">sed</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#smart" class="tsd-kind-icon">smart</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#sort" class="tsd-kind-icon">sort</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#statement" class="tsd-kind-icon">statement</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#statements" class="tsd-kind-icon">statements</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#tail" class="tsd-kind-icon">tail</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#touch" class="tsd-kind-icon">touch</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#uniq" class="tsd-kind-icon">uniq</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#version" class="tsd-kind-icon">version</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#access" class="tsd-kind-icon">access</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#anytypeannotation" class="tsd-kind-icon">any<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#appendfile" class="tsd-kind-icon">append<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#argumentplaceholder" class="tsd-kind-icon">argument<wbr>Placeholder</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#arrayexpression" class="tsd-kind-icon">array<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#arraypattern" class="tsd-kind-icon">array<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#arraytypeannotation" class="tsd-kind-icon">array<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#arrowfunctionexpression" class="tsd-kind-icon">arrow<wbr>Function<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#assignmentexpression" class="tsd-kind-icon">assignment<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#assignmentpattern" class="tsd-kind-icon">assignment<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#awaitexpression" class="tsd-kind-icon">await<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#bigintliteral" class="tsd-kind-icon">big<wbr>Int<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#binaryexpression" class="tsd-kind-icon">binary<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#bindexpression" class="tsd-kind-icon">bind<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#blockstatement" class="tsd-kind-icon">block<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#booleanliteral" class="tsd-kind-icon">boolean<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#booleanliteraltypeannotation" class="tsd-kind-icon">boolean<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#booleantypeannotation" class="tsd-kind-icon">boolean<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#breakstatement" class="tsd-kind-icon">break<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#callexpression" class="tsd-kind-icon">call<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#catchclause" class="tsd-kind-icon">catch<wbr>Clause</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#cd" class="tsd-kind-icon">cd</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#chmod" class="tsd-kind-icon">chmod</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#chown" class="tsd-kind-icon">chown</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classbody" class="tsd-kind-icon">class<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classdeclaration" class="tsd-kind-icon">class<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classexpression" class="tsd-kind-icon">class<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classimplements" class="tsd-kind-icon">class<wbr>Implements</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classmethod" class="tsd-kind-icon">class<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classprivatemethod" class="tsd-kind-icon">class<wbr>Private<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classprivateproperty" class="tsd-kind-icon">class<wbr>Private<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#classproperty" class="tsd-kind-icon">class<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#clone" class="tsd-kind-icon">clone</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#clonedeep" class="tsd-kind-icon">clone<wbr>Deep</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#close" class="tsd-kind-icon">close</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#conditionalexpression" class="tsd-kind-icon">conditional<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#continuestatement" class="tsd-kind-icon">continue<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#copy" class="tsd-kind-icon">copy</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#copyfile" class="tsd-kind-icon">copy<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#copysync" class="tsd-kind-icon">copy<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#createconfigitem" class="tsd-kind-icon">create<wbr>Config<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#createcoveragemap" class="tsd-kind-icon">create<wbr>Coverage<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#createcoveragesummary" class="tsd-kind-icon">create<wbr>Coverage<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#createfile" class="tsd-kind-icon">create<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#createfilecoverage" class="tsd-kind-icon">create<wbr>File<wbr>Coverage</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#createfilesync" class="tsd-kind-icon">create<wbr>File<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#debuggerstatement" class="tsd-kind-icon">debugger<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declareclass" class="tsd-kind-icon">declare<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declareexportalldeclaration" class="tsd-kind-icon">declare<wbr>Export<wbr>All<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declareexportdeclaration" class="tsd-kind-icon">declare<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declarefunction" class="tsd-kind-icon">declare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declareinterface" class="tsd-kind-icon">declare<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declaremodule" class="tsd-kind-icon">declare<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declaremoduleexports" class="tsd-kind-icon">declare<wbr>Module<wbr>Exports</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declareopaquetype" class="tsd-kind-icon">declare<wbr>Opaque<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declaretypealias" class="tsd-kind-icon">declare<wbr>Type<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declarevariable" class="tsd-kind-icon">declare<wbr>Variable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#declaredpredicate" class="tsd-kind-icon">declared<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#decorator" class="tsd-kind-icon">decorator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#directive" class="tsd-kind-icon">directive</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#directiveliteral" class="tsd-kind-icon">directive<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#doexpression" class="tsd-kind-icon">do<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#dowhilestatement" class="tsd-kind-icon">do<wbr>While<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#emptydir" class="tsd-kind-icon">empty<wbr>Dir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#emptydirsync" class="tsd-kind-icon">empty<wbr>Dir<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#emptystatement" class="tsd-kind-icon">empty<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#emptytypeannotation" class="tsd-kind-icon">empty<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensuredir" class="tsd-kind-icon">ensure<wbr>Dir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensuredirsync" class="tsd-kind-icon">ensure<wbr>Dir<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensurefile" class="tsd-kind-icon">ensure<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensurefilesync" class="tsd-kind-icon">ensure<wbr>File<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensurelink" class="tsd-kind-icon">ensure<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensurelinksync" class="tsd-kind-icon">ensure<wbr>Link<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensuresymlink" class="tsd-kind-icon">ensure<wbr>Symlink</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ensuresymlinksync" class="tsd-kind-icon">ensure<wbr>Symlink<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#error" class="tsd-kind-icon">error</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#existstypeannotation" class="tsd-kind-icon">exists<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exit" class="tsd-kind-icon">exit</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exportalldeclaration" class="tsd-kind-icon">export<wbr>All<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exportdefaultdeclaration" class="tsd-kind-icon">export<wbr>Default<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exportdefaultspecifier" class="tsd-kind-icon">export<wbr>Default<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exportnameddeclaration" class="tsd-kind-icon">export<wbr>Named<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exportnamespacespecifier" class="tsd-kind-icon">export<wbr>Namespace<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#exportspecifier" class="tsd-kind-icon">export<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#expressionstatement" class="tsd-kind-icon">expression<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#fchmod" class="tsd-kind-icon">fchmod</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#fchown" class="tsd-kind-icon">fchown</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#fdatasync" class="tsd-kind-icon">fdatasync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#file" class="tsd-kind-icon">file</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#forinstatement" class="tsd-kind-icon">for<wbr>InStatement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#forofstatement" class="tsd-kind-icon">for<wbr>OfStatement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#forstatement" class="tsd-kind-icon">for<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#fstat" class="tsd-kind-icon">fstat</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#fsync" class="tsd-kind-icon">fsync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ftruncate" class="tsd-kind-icon">ftruncate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#functiondeclaration" class="tsd-kind-icon">function<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#functionexpression" class="tsd-kind-icon">function<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#functiontypeannotation" class="tsd-kind-icon">function<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#functiontypeparam" class="tsd-kind-icon">function<wbr>Type<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#futimes" class="tsd-kind-icon">futimes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#generate" class="tsd-kind-icon">generate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatemethodparamid" class="tsd-kind-icon">generate<wbr>Method<wbr>Param<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatemethodresultid" class="tsd-kind-icon">generate<wbr>Method<wbr>Result<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#generictypeannotation" class="tsd-kind-icon">generic<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#identifier" class="tsd-kind-icon">identifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ifstatement" class="tsd-kind-icon">if<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#importdeclaration" class="tsd-kind-icon">import<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#importdefaultspecifier" class="tsd-kind-icon">import<wbr>Default<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#importnamespacespecifier" class="tsd-kind-icon">import<wbr>Namespace<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#importspecifier" class="tsd-kind-icon">import<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#inferredpredicate" class="tsd-kind-icon">inferred<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#interfacedeclaration" class="tsd-kind-icon">interface<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#interfaceextends" class="tsd-kind-icon">interface<wbr>Extends</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#interfacetypeannotation" class="tsd-kind-icon">interface<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#interpreterdirective" class="tsd-kind-icon">interpreter<wbr>Directive</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#intersectiontypeannotation" class="tsd-kind-icon">intersection<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isanytypeannotation" class="tsd-kind-icon">is<wbr>Any<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isargumentplaceholder" class="tsd-kind-icon">is<wbr>Argument<wbr>Placeholder</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isarrayexpression" class="tsd-kind-icon">is<wbr>Array<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isarraypattern" class="tsd-kind-icon">is<wbr>Array<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isarraytypeannotation" class="tsd-kind-icon">is<wbr>Array<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isarrowfunctionexpression" class="tsd-kind-icon">is<wbr>Arrow<wbr>Function<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isassignmentexpression" class="tsd-kind-icon">is<wbr>Assignment<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isassignmentpattern" class="tsd-kind-icon">is<wbr>Assignment<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isawaitexpression" class="tsd-kind-icon">is<wbr>Await<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbigintliteral" class="tsd-kind-icon">is<wbr>Big<wbr>Int<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbinary" class="tsd-kind-icon">is<wbr>Binary</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbinaryexpression" class="tsd-kind-icon">is<wbr>Binary<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbindexpression" class="tsd-kind-icon">is<wbr>Bind<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isblock" class="tsd-kind-icon">is<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isblockparent" class="tsd-kind-icon">is<wbr>Block<wbr>Parent</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isblockstatement" class="tsd-kind-icon">is<wbr>Block<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbooleanliteral" class="tsd-kind-icon">is<wbr>Boolean<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbooleanliteraltypeannotation" class="tsd-kind-icon">is<wbr>Boolean<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbooleantypeannotation" class="tsd-kind-icon">is<wbr>Boolean<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isbreakstatement" class="tsd-kind-icon">is<wbr>Break<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscallexpression" class="tsd-kind-icon">is<wbr>Call<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscatchclause" class="tsd-kind-icon">is<wbr>Catch<wbr>Clause</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclass" class="tsd-kind-icon">is<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassbody" class="tsd-kind-icon">is<wbr>Class<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassdeclaration" class="tsd-kind-icon">is<wbr>Class<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassexpression" class="tsd-kind-icon">is<wbr>Class<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassimplements" class="tsd-kind-icon">is<wbr>Class<wbr>Implements</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassmethod" class="tsd-kind-icon">is<wbr>Class<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassprivatemethod" class="tsd-kind-icon">is<wbr>Class<wbr>Private<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassprivateproperty" class="tsd-kind-icon">is<wbr>Class<wbr>Private<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isclassproperty" class="tsd-kind-icon">is<wbr>Class<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscompletionstatement" class="tsd-kind-icon">is<wbr>Completion<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isconditional" class="tsd-kind-icon">is<wbr>Conditional</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isconditionalexpression" class="tsd-kind-icon">is<wbr>Conditional<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscontinuestatement" class="tsd-kind-icon">is<wbr>Continue<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdebuggerstatement" class="tsd-kind-icon">is<wbr>Debugger<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclaration" class="tsd-kind-icon">is<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclareclass" class="tsd-kind-icon">is<wbr>Declare<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclareexportalldeclaration" class="tsd-kind-icon">is<wbr>Declare<wbr>Export<wbr>All<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclareexportdeclaration" class="tsd-kind-icon">is<wbr>Declare<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclarefunction" class="tsd-kind-icon">is<wbr>Declare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclareinterface" class="tsd-kind-icon">is<wbr>Declare<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclaremodule" class="tsd-kind-icon">is<wbr>Declare<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclaremoduleexports" class="tsd-kind-icon">is<wbr>Declare<wbr>Module<wbr>Exports</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclareopaquetype" class="tsd-kind-icon">is<wbr>Declare<wbr>Opaque<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclaretypealias" class="tsd-kind-icon">is<wbr>Declare<wbr>Type<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclarevariable" class="tsd-kind-icon">is<wbr>Declare<wbr>Variable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdeclaredpredicate" class="tsd-kind-icon">is<wbr>Declared<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdecorator" class="tsd-kind-icon">is<wbr>Decorator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdirective" class="tsd-kind-icon">is<wbr>Directive</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdirectiveliteral" class="tsd-kind-icon">is<wbr>Directive<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdoexpression" class="tsd-kind-icon">is<wbr>DoExpression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isdowhilestatement" class="tsd-kind-icon">is<wbr>DoWhile<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isemptystatement" class="tsd-kind-icon">is<wbr>Empty<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isemptytypeannotation" class="tsd-kind-icon">is<wbr>Empty<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexiststypeannotation" class="tsd-kind-icon">is<wbr>Exists<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportalldeclaration" class="tsd-kind-icon">is<wbr>Export<wbr>All<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportdeclaration" class="tsd-kind-icon">is<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportdefaultdeclaration" class="tsd-kind-icon">is<wbr>Export<wbr>Default<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportdefaultspecifier" class="tsd-kind-icon">is<wbr>Export<wbr>Default<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportnameddeclaration" class="tsd-kind-icon">is<wbr>Export<wbr>Named<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportnamespacespecifier" class="tsd-kind-icon">is<wbr>Export<wbr>Namespace<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexportspecifier" class="tsd-kind-icon">is<wbr>Export<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexpression" class="tsd-kind-icon">is<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexpressionstatement" class="tsd-kind-icon">is<wbr>Expression<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isexpressionwrapper" class="tsd-kind-icon">is<wbr>Expression<wbr>Wrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfile" class="tsd-kind-icon">is<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isflow" class="tsd-kind-icon">is<wbr>Flow</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isflowbaseannotation" class="tsd-kind-icon">is<wbr>Flow<wbr>Base<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isflowdeclaration" class="tsd-kind-icon">is<wbr>Flow<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isflowpredicate" class="tsd-kind-icon">is<wbr>Flow<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isflowtype" class="tsd-kind-icon">is<wbr>Flow<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfor" class="tsd-kind-icon">is<wbr>For</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isforinstatement" class="tsd-kind-icon">is<wbr>For<wbr>InStatement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isforofstatement" class="tsd-kind-icon">is<wbr>For<wbr>OfStatement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isforstatement" class="tsd-kind-icon">is<wbr>For<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isforxstatement" class="tsd-kind-icon">is<wbr>ForXStatement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfunction" class="tsd-kind-icon">is<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfunctiondeclaration" class="tsd-kind-icon">is<wbr>Function<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfunctionexpression" class="tsd-kind-icon">is<wbr>Function<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfunctionparent" class="tsd-kind-icon">is<wbr>Function<wbr>Parent</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfunctiontypeannotation" class="tsd-kind-icon">is<wbr>Function<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isfunctiontypeparam" class="tsd-kind-icon">is<wbr>Function<wbr>Type<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isgenerictypeannotation" class="tsd-kind-icon">is<wbr>Generic<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isidentifier" class="tsd-kind-icon">is<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isifstatement" class="tsd-kind-icon">is<wbr>IfStatement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isimmutable" class="tsd-kind-icon">is<wbr>Immutable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isimport" class="tsd-kind-icon">is<wbr>Import</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isimportdeclaration" class="tsd-kind-icon">is<wbr>Import<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isimportdefaultspecifier" class="tsd-kind-icon">is<wbr>Import<wbr>Default<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isimportnamespacespecifier" class="tsd-kind-icon">is<wbr>Import<wbr>Namespace<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isimportspecifier" class="tsd-kind-icon">is<wbr>Import<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isinferredpredicate" class="tsd-kind-icon">is<wbr>Inferred<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isinterfacedeclaration" class="tsd-kind-icon">is<wbr>Interface<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isinterfaceextends" class="tsd-kind-icon">is<wbr>Interface<wbr>Extends</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isinterfacetypeannotation" class="tsd-kind-icon">is<wbr>Interface<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isinterpreterdirective" class="tsd-kind-icon">is<wbr>Interpreter<wbr>Directive</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isintersectiontypeannotation" class="tsd-kind-icon">is<wbr>Intersection<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsx" class="tsd-kind-icon">isJSX</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxattribute" class="tsd-kind-icon">isJSXAttribute</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxclosingelement" class="tsd-kind-icon">isJSXClosing<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxclosingfragment" class="tsd-kind-icon">isJSXClosing<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxelement" class="tsd-kind-icon">isJSXElement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxemptyexpression" class="tsd-kind-icon">isJSXEmpty<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxexpressioncontainer" class="tsd-kind-icon">isJSXExpression<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxfragment" class="tsd-kind-icon">isJSXFragment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxidentifier" class="tsd-kind-icon">isJSXIdentifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxmemberexpression" class="tsd-kind-icon">isJSXMember<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxnamespacedname" class="tsd-kind-icon">isJSXNamespaced<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxopeningelement" class="tsd-kind-icon">isJSXOpening<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxopeningfragment" class="tsd-kind-icon">isJSXOpening<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxspreadattribute" class="tsd-kind-icon">isJSXSpread<wbr>Attribute</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxspreadchild" class="tsd-kind-icon">isJSXSpread<wbr>Child</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isjsxtext" class="tsd-kind-icon">isJSXText</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#islval" class="tsd-kind-icon">isLVal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#islabeledstatement" class="tsd-kind-icon">is<wbr>Labeled<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isliteral" class="tsd-kind-icon">is<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#islogicalexpression" class="tsd-kind-icon">is<wbr>Logical<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isloop" class="tsd-kind-icon">is<wbr>Loop</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ismemberexpression" class="tsd-kind-icon">is<wbr>Member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ismetaproperty" class="tsd-kind-icon">is<wbr>Meta<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ismethod" class="tsd-kind-icon">is<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ismixedtypeannotation" class="tsd-kind-icon">is<wbr>Mixed<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ismoduledeclaration" class="tsd-kind-icon">is<wbr>Module<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ismodulespecifier" class="tsd-kind-icon">is<wbr>Module<wbr>Specifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnewexpression" class="tsd-kind-icon">is<wbr>New<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnoop" class="tsd-kind-icon">is<wbr>Noop</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnullliteral" class="tsd-kind-icon">is<wbr>Null<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnullliteraltypeannotation" class="tsd-kind-icon">is<wbr>Null<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnullabletypeannotation" class="tsd-kind-icon">is<wbr>Nullable<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnumberliteral" class="tsd-kind-icon">is<wbr>Number<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnumberliteraltypeannotation" class="tsd-kind-icon">is<wbr>Number<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnumbertypeannotation" class="tsd-kind-icon">is<wbr>Number<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnumericliteral" class="tsd-kind-icon">is<wbr>Numeric<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjectexpression" class="tsd-kind-icon">is<wbr>Object<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjectmember" class="tsd-kind-icon">is<wbr>Object<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjectmethod" class="tsd-kind-icon">is<wbr>Object<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjectpattern" class="tsd-kind-icon">is<wbr>Object<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjectproperty" class="tsd-kind-icon">is<wbr>Object<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjecttypeannotation" class="tsd-kind-icon">is<wbr>Object<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjecttypecallproperty" class="tsd-kind-icon">is<wbr>Object<wbr>Type<wbr>Call<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjecttypeindexer" class="tsd-kind-icon">is<wbr>Object<wbr>Type<wbr>Indexer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjecttypeinternalslot" class="tsd-kind-icon">is<wbr>Object<wbr>Type<wbr>Internal<wbr>Slot</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjecttypeproperty" class="tsd-kind-icon">is<wbr>Object<wbr>Type<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobjecttypespreadproperty" class="tsd-kind-icon">is<wbr>Object<wbr>Type<wbr>Spread<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isopaquetype" class="tsd-kind-icon">is<wbr>Opaque<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isoptionalcallexpression" class="tsd-kind-icon">is<wbr>Optional<wbr>Call<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isoptionalmemberexpression" class="tsd-kind-icon">is<wbr>Optional<wbr>Member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isparenthesizedexpression" class="tsd-kind-icon">is<wbr>Parenthesized<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ispattern" class="tsd-kind-icon">is<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ispatternlike" class="tsd-kind-icon">is<wbr>Pattern<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ispipelinebarefunction" class="tsd-kind-icon">is<wbr>Pipeline<wbr>Bare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ispipelineprimarytopicreference" class="tsd-kind-icon">is<wbr>Pipeline<wbr>Primary<wbr>Topic<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ispipelinetopicexpression" class="tsd-kind-icon">is<wbr>Pipeline<wbr>Topic<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isplaceholder" class="tsd-kind-icon">is<wbr>Placeholder</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isprivate" class="tsd-kind-icon">is<wbr>Private</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isprivatename" class="tsd-kind-icon">is<wbr>Private<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isprogram" class="tsd-kind-icon">is<wbr>Program</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isproperty" class="tsd-kind-icon">is<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#ispureish" class="tsd-kind-icon">is<wbr>Pureish</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isqualifiedtypeidentifier" class="tsd-kind-icon">is<wbr>Qualified<wbr>Type<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isregexpliteral" class="tsd-kind-icon">is<wbr>Reg<wbr>Exp<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isregexliteral" class="tsd-kind-icon">is<wbr>Regex<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isrestelement" class="tsd-kind-icon">is<wbr>Rest<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isrestproperty" class="tsd-kind-icon">is<wbr>Rest<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isreturnstatement" class="tsd-kind-icon">is<wbr>Return<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isscopable" class="tsd-kind-icon">is<wbr>Scopable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#issequenceexpression" class="tsd-kind-icon">is<wbr>Sequence<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isspreadelement" class="tsd-kind-icon">is<wbr>Spread<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isspreadproperty" class="tsd-kind-icon">is<wbr>Spread<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstatement" class="tsd-kind-icon">is<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringliteral" class="tsd-kind-icon">is<wbr>String<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringliteraltypeannotation" class="tsd-kind-icon">is<wbr>String<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringtypeannotation" class="tsd-kind-icon">is<wbr>String<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#issuper" class="tsd-kind-icon">is<wbr>Super</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isswitchcase" class="tsd-kind-icon">is<wbr>Switch<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isswitchstatement" class="tsd-kind-icon">is<wbr>Switch<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsanykeyword" class="tsd-kind-icon">isTSAny<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsarraytype" class="tsd-kind-icon">isTSArray<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsasexpression" class="tsd-kind-icon">isTSAs<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsbooleankeyword" class="tsd-kind-icon">isTSBoolean<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istscallsignaturedeclaration" class="tsd-kind-icon">isTSCall<wbr>Signature<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsconditionaltype" class="tsd-kind-icon">isTSConditional<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsconstructsignaturedeclaration" class="tsd-kind-icon">isTSConstruct<wbr>Signature<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsconstructortype" class="tsd-kind-icon">isTSConstructor<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsdeclarefunction" class="tsd-kind-icon">isTSDeclare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsdeclaremethod" class="tsd-kind-icon">isTSDeclare<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsentityname" class="tsd-kind-icon">isTSEntity<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsenumdeclaration" class="tsd-kind-icon">isTSEnum<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsenummember" class="tsd-kind-icon">isTSEnum<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsexportassignment" class="tsd-kind-icon">isTSExport<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsexpressionwithtypearguments" class="tsd-kind-icon">isTSExpression<wbr>With<wbr>Type<wbr>Arguments</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsexternalmodulereference" class="tsd-kind-icon">isTSExternal<wbr>Module<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsfunctiontype" class="tsd-kind-icon">isTSFunction<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsimportequalsdeclaration" class="tsd-kind-icon">isTSImport<wbr>Equals<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsimporttype" class="tsd-kind-icon">isTSImport<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsindexsignature" class="tsd-kind-icon">isTSIndex<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsindexedaccesstype" class="tsd-kind-icon">isTSIndexed<wbr>Access<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsinfertype" class="tsd-kind-icon">isTSInfer<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsinterfacebody" class="tsd-kind-icon">isTSInterface<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsinterfacedeclaration" class="tsd-kind-icon">isTSInterface<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsintersectiontype" class="tsd-kind-icon">isTSIntersection<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsliteraltype" class="tsd-kind-icon">isTSLiteral<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsmappedtype" class="tsd-kind-icon">isTSMapped<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsmethodsignature" class="tsd-kind-icon">isTSMethod<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsmoduleblock" class="tsd-kind-icon">isTSModule<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsmoduledeclaration" class="tsd-kind-icon">isTSModule<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsnamespaceexportdeclaration" class="tsd-kind-icon">isTSNamespace<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsneverkeyword" class="tsd-kind-icon">isTSNever<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsnonnullexpression" class="tsd-kind-icon">isTSNon<wbr>Null<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsnullkeyword" class="tsd-kind-icon">isTSNull<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsnumberkeyword" class="tsd-kind-icon">isTSNumber<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsobjectkeyword" class="tsd-kind-icon">isTSObject<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsoptionaltype" class="tsd-kind-icon">isTSOptional<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsparameterproperty" class="tsd-kind-icon">isTSParameter<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsparenthesizedtype" class="tsd-kind-icon">isTSParenthesized<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istspropertysignature" class="tsd-kind-icon">isTSProperty<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsqualifiedname" class="tsd-kind-icon">isTSQualified<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsresttype" class="tsd-kind-icon">isTSRest<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsstringkeyword" class="tsd-kind-icon">isTSString<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istssymbolkeyword" class="tsd-kind-icon">isTSSymbol<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststhistype" class="tsd-kind-icon">isTSThis<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststupletype" class="tsd-kind-icon">isTSTuple<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststype" class="tsd-kind-icon">isTSType</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypealiasdeclaration" class="tsd-kind-icon">isTSType<wbr>Alias<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeannotation" class="tsd-kind-icon">isTSType<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeassertion" class="tsd-kind-icon">isTSType<wbr>Assertion</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeelement" class="tsd-kind-icon">isTSType<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeliteral" class="tsd-kind-icon">isTSType<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeoperator" class="tsd-kind-icon">isTSType<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeparameter" class="tsd-kind-icon">isTSType<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeparameterdeclaration" class="tsd-kind-icon">isTSType<wbr>Parameter<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypeparameterinstantiation" class="tsd-kind-icon">isTSType<wbr>Parameter<wbr>Instantiation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypepredicate" class="tsd-kind-icon">isTSType<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypequery" class="tsd-kind-icon">isTSType<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iststypereference" class="tsd-kind-icon">isTSType<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsundefinedkeyword" class="tsd-kind-icon">isTSUndefined<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsuniontype" class="tsd-kind-icon">isTSUnion<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsunknownkeyword" class="tsd-kind-icon">isTSUnknown<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istsvoidkeyword" class="tsd-kind-icon">isTSVoid<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istaggedtemplateexpression" class="tsd-kind-icon">is<wbr>Tagged<wbr>Template<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istemplateelement" class="tsd-kind-icon">is<wbr>Template<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istemplateliteral" class="tsd-kind-icon">is<wbr>Template<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isterminatorless" class="tsd-kind-icon">is<wbr>Terminatorless</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isthisexpression" class="tsd-kind-icon">is<wbr>This<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isthistypeannotation" class="tsd-kind-icon">is<wbr>This<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isthrowstatement" class="tsd-kind-icon">is<wbr>Throw<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istrystatement" class="tsd-kind-icon">is<wbr>Try<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istupletypeannotation" class="tsd-kind-icon">is<wbr>Tuple<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypealias" class="tsd-kind-icon">is<wbr>Type<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypeannotation" class="tsd-kind-icon">is<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypecastexpression" class="tsd-kind-icon">is<wbr>Type<wbr>Cast<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypeparameter" class="tsd-kind-icon">is<wbr>Type<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypeparameterdeclaration" class="tsd-kind-icon">is<wbr>Type<wbr>Parameter<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypeparameterinstantiation" class="tsd-kind-icon">is<wbr>Type<wbr>Parameter<wbr>Instantiation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#istypeoftypeannotation" class="tsd-kind-icon">is<wbr>Typeof<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isunaryexpression" class="tsd-kind-icon">is<wbr>Unary<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isunarylike" class="tsd-kind-icon">is<wbr>Unary<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isuniontypeannotation" class="tsd-kind-icon">is<wbr>Union<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isupdateexpression" class="tsd-kind-icon">is<wbr>Update<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isuserwhitespacable" class="tsd-kind-icon">is<wbr>User<wbr>Whitespacable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isvariabledeclaration" class="tsd-kind-icon">is<wbr>Variable<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isvariabledeclarator" class="tsd-kind-icon">is<wbr>Variable<wbr>Declarator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isvariance" class="tsd-kind-icon">is<wbr>Variance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isvoidtypeannotation" class="tsd-kind-icon">is<wbr>Void<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iswhile" class="tsd-kind-icon">is<wbr>While</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iswhilestatement" class="tsd-kind-icon">is<wbr>While<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iswithstatement" class="tsd-kind-icon">is<wbr>With<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isyieldexpression" class="tsd-kind-icon">is<wbr>Yield<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxattribute" class="tsd-kind-icon">jsx<wbr>Attribute</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxclosingelement" class="tsd-kind-icon">jsx<wbr>Closing<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxclosingfragment" class="tsd-kind-icon">jsx<wbr>Closing<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxelement" class="tsd-kind-icon">jsx<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxemptyexpression" class="tsd-kind-icon">jsx<wbr>Empty<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxexpressioncontainer" class="tsd-kind-icon">jsx<wbr>Expression<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxfragment" class="tsd-kind-icon">jsx<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxidentifier" class="tsd-kind-icon">jsx<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxmemberexpression" class="tsd-kind-icon">jsx<wbr>Member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxnamespacedname" class="tsd-kind-icon">jsx<wbr>Namespaced<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxopeningelement" class="tsd-kind-icon">jsx<wbr>Opening<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxopeningfragment" class="tsd-kind-icon">jsx<wbr>Opening<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxspreadattribute" class="tsd-kind-icon">jsx<wbr>Spread<wbr>Attribute</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxspreadchild" class="tsd-kind-icon">jsx<wbr>Spread<wbr>Child</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#jsxtext" class="tsd-kind-icon">jsx<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#labeledstatement" class="tsd-kind-icon">labeled<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#lchown" class="tsd-kind-icon">lchown</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#link" class="tsd-kind-icon">link</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#loadoptions" class="tsd-kind-icon">load<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#loadpartialconfig" class="tsd-kind-icon">load<wbr>Partial<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#logicalexpression" class="tsd-kind-icon">logical<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#lstat" class="tsd-kind-icon">lstat</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#memberexpression" class="tsd-kind-icon">member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#metaproperty" class="tsd-kind-icon">meta<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mixedtypeannotation" class="tsd-kind-icon">mixed<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mkdir" class="tsd-kind-icon">mkdir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mkdirp" class="tsd-kind-icon">mkdirp</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mkdirpsync" class="tsd-kind-icon">mkdirp<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mkdirs" class="tsd-kind-icon">mkdirs</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mkdirssync" class="tsd-kind-icon">mkdirs<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#mkdtemp" class="tsd-kind-icon">mkdtemp</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#move" class="tsd-kind-icon">move</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#movesync" class="tsd-kind-icon">move<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#newexpression" class="tsd-kind-icon">new<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#noop" class="tsd-kind-icon">noop</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#nullliteral" class="tsd-kind-icon">null<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#nullliteraltypeannotation" class="tsd-kind-icon">null<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#nullabletypeannotation" class="tsd-kind-icon">nullable<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#numberliteraltypeannotation" class="tsd-kind-icon">number<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#numbertypeannotation" class="tsd-kind-icon">number<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#numericliteral" class="tsd-kind-icon">numeric<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objectexpression" class="tsd-kind-icon">object<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objectmethod" class="tsd-kind-icon">object<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objectpattern" class="tsd-kind-icon">object<wbr>Pattern</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objectproperty" class="tsd-kind-icon">object<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objecttypeannotation" class="tsd-kind-icon">object<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objecttypecallproperty" class="tsd-kind-icon">object<wbr>Type<wbr>Call<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objecttypeindexer" class="tsd-kind-icon">object<wbr>Type<wbr>Indexer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objecttypeinternalslot" class="tsd-kind-icon">object<wbr>Type<wbr>Internal<wbr>Slot</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objecttypeproperty" class="tsd-kind-icon">object<wbr>Type<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#objecttypespreadproperty" class="tsd-kind-icon">object<wbr>Type<wbr>Spread<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#opaquetype" class="tsd-kind-icon">opaque<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#open" class="tsd-kind-icon">open</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#optionalcallexpression" class="tsd-kind-icon">optional<wbr>Call<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#optionalmemberexpression" class="tsd-kind-icon">optional<wbr>Member<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#outputfile" class="tsd-kind-icon">output<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#outputfilesync" class="tsd-kind-icon">output<wbr>File<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#outputjson" class="tsd-kind-icon">outputJSON</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#outputjsonsync" class="tsd-kind-icon">outputJSONSync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#outputjson" class="tsd-kind-icon">output<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#outputjsonsync" class="tsd-kind-icon">output<wbr>Json<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parenthesizedexpression" class="tsd-kind-icon">parenthesized<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parse" class="tsd-kind-icon">parse</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parseasync" class="tsd-kind-icon">parse<wbr>Async</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parseexpression" class="tsd-kind-icon">parse<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parseopenrpcdocument" class="tsd-kind-icon">parse<wbr>OpenRPCDocument</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsesync" class="tsd-kind-icon">parse<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#pathexists" class="tsd-kind-icon">path<wbr>Exists</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#pathexistssync" class="tsd-kind-icon">path<wbr>Exists<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#pipelinebarefunction" class="tsd-kind-icon">pipeline<wbr>Bare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#pipelineprimarytopicreference" class="tsd-kind-icon">pipeline<wbr>Primary<wbr>Topic<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#pipelinetopicexpression" class="tsd-kind-icon">pipeline<wbr>Topic<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#placeholder" class="tsd-kind-icon">placeholder</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#privatename" class="tsd-kind-icon">private<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#program" class="tsd-kind-icon">program</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#pwd" class="tsd-kind-icon">pwd</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#qualifiedtypeidentifier" class="tsd-kind-icon">qualified<wbr>Type<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#read" class="tsd-kind-icon">read</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readfile" class="tsd-kind-icon">read<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readjson" class="tsd-kind-icon">readJSON</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readjsonsync" class="tsd-kind-icon">readJSONSync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readjson" class="tsd-kind-icon">read<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readjsonsync" class="tsd-kind-icon">read<wbr>Json<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readdir" class="tsd-kind-icon">readdir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#readlink" class="tsd-kind-icon">readlink</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#realpath" class="tsd-kind-icon">realpath</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#regexpliteral" class="tsd-kind-icon">reg<wbr>Exp<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#remove" class="tsd-kind-icon">remove</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#removeproperties" class="tsd-kind-icon">remove<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#removepropertiesdeep" class="tsd-kind-icon">remove<wbr>Properties<wbr>Deep</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#removesync" class="tsd-kind-icon">remove<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#rename" class="tsd-kind-icon">rename</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#restelement" class="tsd-kind-icon">rest<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#returnstatement" class="tsd-kind-icon">return<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#rmdir" class="tsd-kind-icon">rmdir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#sequenceexpression" class="tsd-kind-icon">sequence<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#set" class="tsd-kind-icon">set</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#spreadelement" class="tsd-kind-icon">spread<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#stat" class="tsd-kind-icon">stat</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#stringliteral" class="tsd-kind-icon">string<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#stringliteraltypeannotation" class="tsd-kind-icon">string<wbr>Literal<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#stringtypeannotation" class="tsd-kind-icon">string<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#switchcase" class="tsd-kind-icon">switch<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#switchstatement" class="tsd-kind-icon">switch<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#symlink" class="tsd-kind-icon">symlink</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#taggedtemplateexpression" class="tsd-kind-icon">tagged<wbr>Template<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tempdir" class="tsd-kind-icon">tempdir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#templateelement" class="tsd-kind-icon">template<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#templateliteral" class="tsd-kind-icon">template<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#test" class="tsd-kind-icon">test</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#thisexpression" class="tsd-kind-icon">this<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#thistypeannotation" class="tsd-kind-icon">this<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#throwstatement" class="tsd-kind-icon">throw<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transform" class="tsd-kind-icon">transform</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformasync" class="tsd-kind-icon">transform<wbr>Async</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformfile" class="tsd-kind-icon">transform<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformfileasync" class="tsd-kind-icon">transform<wbr>File<wbr>Async</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformfilesync" class="tsd-kind-icon">transform<wbr>File<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformfromast" class="tsd-kind-icon">transform<wbr>From<wbr>Ast</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformfromastasync" class="tsd-kind-icon">transform<wbr>From<wbr>Ast<wbr>Async</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformfromastsync" class="tsd-kind-icon">transform<wbr>From<wbr>Ast<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#transformsync" class="tsd-kind-icon">transform<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#traverse" class="tsd-kind-icon">traverse</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#truncate" class="tsd-kind-icon">truncate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#trystatement" class="tsd-kind-icon">try<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsanykeyword" class="tsd-kind-icon">ts<wbr>Any<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsarraytype" class="tsd-kind-icon">ts<wbr>Array<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsasexpression" class="tsd-kind-icon">ts<wbr>AsExpression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsbooleankeyword" class="tsd-kind-icon">ts<wbr>Boolean<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tscallsignaturedeclaration" class="tsd-kind-icon">ts<wbr>Call<wbr>Signature<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsconditionaltype" class="tsd-kind-icon">ts<wbr>Conditional<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsconstructsignaturedeclaration" class="tsd-kind-icon">ts<wbr>Construct<wbr>Signature<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsconstructortype" class="tsd-kind-icon">ts<wbr>Constructor<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsdeclarefunction" class="tsd-kind-icon">ts<wbr>Declare<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsdeclaremethod" class="tsd-kind-icon">ts<wbr>Declare<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsenumdeclaration" class="tsd-kind-icon">ts<wbr>Enum<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsenummember" class="tsd-kind-icon">ts<wbr>Enum<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsexportassignment" class="tsd-kind-icon">ts<wbr>Export<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsexpressionwithtypearguments" class="tsd-kind-icon">ts<wbr>Expression<wbr>With<wbr>Type<wbr>Arguments</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsexternalmodulereference" class="tsd-kind-icon">ts<wbr>External<wbr>Module<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsfunctiontype" class="tsd-kind-icon">ts<wbr>Function<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsimportequalsdeclaration" class="tsd-kind-icon">ts<wbr>Import<wbr>Equals<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsimporttype" class="tsd-kind-icon">ts<wbr>Import<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsindexsignature" class="tsd-kind-icon">ts<wbr>Index<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsindexedaccesstype" class="tsd-kind-icon">ts<wbr>Indexed<wbr>Access<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsinfertype" class="tsd-kind-icon">ts<wbr>Infer<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsinterfacebody" class="tsd-kind-icon">ts<wbr>Interface<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsinterfacedeclaration" class="tsd-kind-icon">ts<wbr>Interface<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsintersectiontype" class="tsd-kind-icon">ts<wbr>Intersection<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsliteraltype" class="tsd-kind-icon">ts<wbr>Literal<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsmappedtype" class="tsd-kind-icon">ts<wbr>Mapped<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsmethodsignature" class="tsd-kind-icon">ts<wbr>Method<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsmoduleblock" class="tsd-kind-icon">ts<wbr>Module<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsmoduledeclaration" class="tsd-kind-icon">ts<wbr>Module<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsnamespaceexportdeclaration" class="tsd-kind-icon">ts<wbr>Namespace<wbr>Export<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsneverkeyword" class="tsd-kind-icon">ts<wbr>Never<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsnonnullexpression" class="tsd-kind-icon">ts<wbr>Non<wbr>Null<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsnullkeyword" class="tsd-kind-icon">ts<wbr>Null<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsnumberkeyword" class="tsd-kind-icon">ts<wbr>Number<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsobjectkeyword" class="tsd-kind-icon">ts<wbr>Object<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsoptionaltype" class="tsd-kind-icon">ts<wbr>Optional<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsparameterproperty" class="tsd-kind-icon">ts<wbr>Parameter<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsparenthesizedtype" class="tsd-kind-icon">ts<wbr>Parenthesized<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tspropertysignature" class="tsd-kind-icon">ts<wbr>Property<wbr>Signature</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsqualifiedname" class="tsd-kind-icon">ts<wbr>Qualified<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsresttype" class="tsd-kind-icon">ts<wbr>Rest<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsstringkeyword" class="tsd-kind-icon">ts<wbr>String<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tssymbolkeyword" class="tsd-kind-icon">ts<wbr>Symbol<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsthistype" class="tsd-kind-icon">ts<wbr>This<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstupletype" class="tsd-kind-icon">ts<wbr>Tuple<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypealiasdeclaration" class="tsd-kind-icon">ts<wbr>Type<wbr>Alias<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeannotation" class="tsd-kind-icon">ts<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeassertion" class="tsd-kind-icon">ts<wbr>Type<wbr>Assertion</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeliteral" class="tsd-kind-icon">ts<wbr>Type<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeoperator" class="tsd-kind-icon">ts<wbr>Type<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeparameter" class="tsd-kind-icon">ts<wbr>Type<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeparameterdeclaration" class="tsd-kind-icon">ts<wbr>Type<wbr>Parameter<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypeparameterinstantiation" class="tsd-kind-icon">ts<wbr>Type<wbr>Parameter<wbr>Instantiation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypepredicate" class="tsd-kind-icon">ts<wbr>Type<wbr>Predicate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypequery" class="tsd-kind-icon">ts<wbr>Type<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tstypereference" class="tsd-kind-icon">ts<wbr>Type<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsundefinedkeyword" class="tsd-kind-icon">ts<wbr>Undefined<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsuniontype" class="tsd-kind-icon">ts<wbr>Union<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsunknownkeyword" class="tsd-kind-icon">ts<wbr>Unknown<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tsvoidkeyword" class="tsd-kind-icon">ts<wbr>Void<wbr>Keyword</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#tupletypeannotation" class="tsd-kind-icon">tuple<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typealias" class="tsd-kind-icon">type<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typeannotation" class="tsd-kind-icon">type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typecastexpression" class="tsd-kind-icon">type<wbr>Cast<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typeparameter" class="tsd-kind-icon">type<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typeparameterdeclaration" class="tsd-kind-icon">type<wbr>Parameter<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typeparameterinstantiation" class="tsd-kind-icon">type<wbr>Parameter<wbr>Instantiation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typeoftypeannotation" class="tsd-kind-icon">typeof<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#unaryexpression" class="tsd-kind-icon">unary<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#uniontypeannotation" class="tsd-kind-icon">union<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#unlink" class="tsd-kind-icon">unlink</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#updateexpression" class="tsd-kind-icon">update<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#utimes" class="tsd-kind-icon">utimes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#validate" class="tsd-kind-icon">validate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validateopenrpcdocument" class="tsd-kind-icon">validate<wbr>OpenRPCDocument</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#variabledeclaration" class="tsd-kind-icon">variable<wbr>Declaration</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#variabledeclarator" class="tsd-kind-icon">variable<wbr>Declarator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#variance" class="tsd-kind-icon">variance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#voidtypeannotation" class="tsd-kind-icon">void<wbr>Type<wbr>Annotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#which" class="tsd-kind-icon">which</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#whilestatement" class="tsd-kind-icon">while<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#withstatement" class="tsd-kind-icon">with<wbr>Statement</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#write" class="tsd-kind-icon">write</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#writefile" class="tsd-kind-icon">write<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#writejson" class="tsd-kind-icon">writeJSON</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#writejsonsync" class="tsd-kind-icon">writeJSONSync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#writejson" class="tsd-kind-icon">write<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#writejsonsync" class="tsd-kind-icon">write<wbr>Json<wbr>Sync</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#yieldexpression" class="tsd-kind-icon">yield<wbr>Expression</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
