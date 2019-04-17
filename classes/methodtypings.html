@@ -96,6 +96,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="methodtypings.html#getalluniquetypings" class="tsd-kind-icon">get<wbr>All<wbr>Unique<wbr>Typings</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="methodtypings.html#getfunctionsignature" class="tsd-kind-icon">get<wbr>Function<wbr>Signature</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="methodtypings.html#gettypedefinitionsformethod" class="tsd-kind-icon">get<wbr>Type<wbr>Definitions<wbr>For<wbr>Method</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="methodtypings.html#gettypingsformethod" class="tsd-kind-icon">get<wbr>Typings<wbr>For<wbr>Method</a></li>
 							</ul>
 						</section>
 					</div>
@@ -113,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/352b057/src/method-typings/index.ts#L29">src/method-typings/index.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/0130040/src/method-typings/index.ts#L34">src/method-typings/index.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -139,7 +140,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/352b057/src/method-typings/index.ts#L37">src/method-typings/index.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/0130040/src/method-typings/index.ts#L42">src/method-typings/index.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -162,7 +163,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/352b057/src/method-typings/index.ts#L76">src/method-typings/index.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/0130040/src/method-typings/index.ts#L108">src/method-typings/index.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -191,7 +192,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/352b057/src/method-typings/index.ts#L97">src/method-typings/index.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/0130040/src/method-typings/index.ts#L129">src/method-typings/index.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -226,12 +227,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/352b057/src/method-typings/index.ts#L55">src/method-typings/index.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/0130040/src/method-typings/index.ts#L87">src/method-typings/index.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gives you all the types needed for a particular method.</p>
+									<p>Gives you all the [[IContentDescriptorTyping.typings]] needed for a particular method.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -247,6 +248,41 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>A string containing all the typings joined together.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettypingsformethod" class="tsd-anchor"></a>
+					<h3>get<wbr>Typings<wbr>For<wbr>Method</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Typings<wbr>For<wbr>Method<span class="tsd-signature-symbol">(</span>method<span class="tsd-signature-symbol">: </span><a href="../interfaces/methodobject.html" class="tsd-signature-type">MethodObject</a>, language<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TLanguages</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/imethodtypings.html" class="tsd-signature-type">IMethodTypings</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/open-rpc/schema-utils-js/blob/0130040/src/method-typings/index.ts#L60">src/method-typings/index.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gives you all the <a href="../interfaces/imethodtypings.html">IMethodTypings</a> for a given method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>method: <a href="../interfaces/methodobject.html" class="tsd-signature-type">MethodObject</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The method you need the types for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>language: <span class="tsd-signature-type">TLanguages</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/imethodtypings.html" class="tsd-signature-type">IMethodTypings</a></h4>
 							<p>A string containing all the typings</p>
 						</li>
 					</ul>
@@ -282,6 +318,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="methodtypings.html#gettypedefinitionsformethod" class="tsd-kind-icon">get<wbr>Type<wbr>Definitions<wbr>For<wbr>Method</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="methodtypings.html#gettypingsformethod" class="tsd-kind-icon">get<wbr>Typings<wbr>For<wbr>Method</a>
 							</li>
 						</ul>
 					</li>
