@@ -1,7 +1,7 @@
 import metaSchema, { OpenrpcDocument as OpenRPC } from "@open-rpc/meta-schema";
 import Ajv, { ErrorObject } from "ajv";
 import JsonSchemaMetaSchema from "@json-schema-tools/meta-schema";
-import getMetaSchemaExtended from "./append-extension-schema";
+import getMetaSchemaExtended from "./get-meta-schema-with-extension";
 
 /**
  * @ignore
@@ -71,7 +71,7 @@ export default function validateOpenRPCDocument(
     ].join('\n'));
   }
 
-  //ajv.validate(metaSchemaCopy, document);
+//  ajv.validate(metaSchemaCopy, document);
 
   if (ajv.errors) {
     console.log(document)
