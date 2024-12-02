@@ -116,6 +116,51 @@ const handleSchemasInsideContentDescriptorComponents = async (doc: OpenrpcDocume
   return doc;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleExtension = async (extensionOrRef: any, doc: OpenrpcDocument, resolver: ReferenceResolver): Promise<any> => {
+
+  if(extensionOrRef.$ref !== undefined) {
+    extensionOrRef = await derefItem({ $ref: extensionOrRef.$ref }, doc, resolver);
+  }
+
+  if(extensionOrRef.name !== undefined) {
+    extensionOrRef.name = await derefItem(extensionOrRef.name, doc, resolver);
+  }
+  if(extensionOrRef.version !== undefined) {
+    extensionOrRef.version = await derefItem(extensionOrRef.version, doc, resolver);
+  }
+  if(extensionOrRef.description !== undefined) {
+    extensionOrRef.description = await derefItem(extensionOrRef.description, doc, resolver);
+  }
+  if(extensionOrRef.summary !== undefined) {
+    extensionOrRef.summary = await derefItem(extensionOrRef.summary, doc, resolver);
+  }
+  if(extensionOrRef.openrpcExtension !== undefined) {
+    extensionOrRef.openrpcExtension = await derefItem(extensionOrRef.openrpcExtension, doc, resolver);
+  }
+  if(extensionOrRef.restricted !== undefined) {
+    extensionOrRef.restricted = await derefItems(extensionOrRef.restricted, doc, resolver);
+  }
+  if(extensionOrRef.externalDocumentation !== undefined) {
+    extensionOrRef.externalDocumentation = await derefItem(extensionOrRef.externalDocumentation, doc, resolver);
+    if(extensionOrRef.externalDocumentation.url !== undefined) 
+      extensionOrRef.externalDocumentation.url = await derefItem(extensionOrRef.externalDocumentation.url, doc, resolver);
+    if(extensionOrRef.externalDocumentation.description !== undefined)
+      extensionOrRef.externalDocumentation.description = await derefItem(extensionOrRef.externalDocumentation.description, doc, resolver);
+  }
+  
+  let componentSchemas: SchemaComponents = {};
+  if (doc.components && doc.components.schemas) {
+    componentSchemas = doc.components.schemas as SchemaComponents;
+  }
+
+  if(extensionOrRef.schema !== undefined) {
+    extensionOrRef.schema = await handleSchemaWithSchemaComponents(extensionOrRef.schema, componentSchemas);
+  }
+
+  return extensionOrRef
+}
+
 const handleMethod = async (methodOrRef: MethodOrReference, doc: OpenrpcDocument, resolver: ReferenceResolver): Promise<MethodObject> => {
   let method = methodOrRef as MethodObject;
 
@@ -199,11 +244,20 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
 
   derefDoc = await handleSchemaComponents(derefDoc);
   derefDoc = await handleSchemasInsideContentDescriptorComponents(derefDoc);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const extensions = [] as any; 
+  for(const extension of derefDoc['x-extensions']) {
+     extensions.push(await handleExtension(extension, derefDoc, resolver));
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const methods = [] as any;
   for (const method of derefDoc.methods) {
     methods.push(await handleMethod(method, derefDoc, resolver));
   }
 
+  derefDoc['x-extensions'] = extensions;
   derefDoc.methods = methods;
 
   return derefDoc;
