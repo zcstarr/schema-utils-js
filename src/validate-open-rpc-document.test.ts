@@ -87,4 +87,5 @@ describe("validateOpenRPCDocument", () => {
     expect(result).not.toBe(null);
     expect(result).toBeInstanceOf(OpenRPCDocumentValidationError);
   });
+  
 });

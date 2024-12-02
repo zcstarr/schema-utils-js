@@ -1,7 +1,8 @@
-import metaSchema, { OpenrpcDocument as OpenRPC } from "@open-rpc/meta-schema";
+import { OpenrpcDocument as OpenRPC } from "@open-rpc/meta-schema";
 import Ajv, { ErrorObject } from "ajv";
 import JsonSchemaMetaSchema from "@json-schema-tools/meta-schema";
-import extensionSchema from "./open-rpc-extensions-schema.json"
+import applyExtensionSpec from "./apply-extension-spec";
+import getExtendedMetaSchema from "./get-extended-metaschema";
 
 /**
  * @ignore
@@ -52,22 +53,10 @@ export default function validateOpenRPCDocument(
 ): OpenRPCDocumentValidationError | true {
   const ajv = new Ajv();
   ajv.addSchema(JsonSchemaMetaSchema, "https://meta.json-schema.tools");
-  const metaSchemaCopy = { ...metaSchema } as any;
-  // const metaSchemaCopy = getMetaSchemaExtended() as any;
-  // const oldMetaSchemaCopy = { ...metaSchema } as any;
-  const extensionMetaSchemaCopy = { ...extensionSchema } as any;
-
-  // Process the extension and meta schema to remove the $id and $schema properties
-  delete extensionMetaSchemaCopy.$schema;
-  delete extensionMetaSchemaCopy.$id;
-  delete metaSchemaCopy.definitions.JSONSchema.$id;
-  delete metaSchemaCopy.definitions.JSONSchema.$schema;
-  delete metaSchemaCopy.$schema;
-  delete metaSchemaCopy.$id;
-  metaSchemaCopy.properties['x-extensions'] ={"$ref":"#/definitions/x-extensions"} 
-  metaSchemaCopy.definitions['x-extensions']=extensionMetaSchemaCopy.properties['x-extensions'];
-  try {
-    ajv.validate(metaSchemaCopy, document);
+  let extMetaSchema = getExtendedMetaSchema();
+  extMetaSchema = applyExtensionSpec(document, extMetaSchema)
+try {
+    ajv.validate(extMetaSchema, document);
   } catch (e) {
     throw new Error([
       'schema-utils-js: Internal Error',
@@ -79,8 +68,6 @@ export default function validateOpenRPCDocument(
   }
 
   if (ajv.errors) {
-    console.log(document)
-    console.info(ajv.errors)
     return new OpenRPCDocumentValidationError(ajv.errors as ErrorObject[]);
   } else {
     return true;

@@ -8,7 +8,7 @@
     {
       "name": "getExampleData",
       "summary": "Retrieves example data from the API.",
-      "x-notification": false,
+      "x-notification": "string",
       "params": [
         {
           "name": "dataId",
@@ -57,7 +57,7 @@
         "methodObject"
       ],
       "schema": {
-        "type": "badschema",
+        "type": "boolean",
         "description": "wether or not this method is a notification or not"
       }
     }
