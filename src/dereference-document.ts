@@ -247,7 +247,6 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
     methods.push(await handleMethod(method, derefDoc, resolver));
   }
 
-  derefDoc['x-extensions'] = extensions;
   derefDoc.methods = methods;
 
   return derefDoc;
