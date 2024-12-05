@@ -9,29 +9,36 @@ import { OpenrpcDocument as OpenRPC } from "@open-rpc/meta-schema";
  */
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
 function applyExtensionSpec(document: OpenRPC, metaSchema: any): any {
+  const extendedMetaSchema = metaSchema;
 
-  const extendedMetaSchema = metaSchema
-
-  if(!document['x-extensions'])
-    return extendedMetaSchema
+  if (!document["x-extensions"]) return extendedMetaSchema;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  document['x-extensions'].forEach((extension: any) => {
-    const {name, schema,summary, description, restricted}  = extension
+  document["x-extensions"].forEach((extension: any) => {
+    const { name, schema, summary, description, restricted } = extension;
     restricted.forEach((schemaDefinition: string) => {
-      const def = extendedMetaSchema.definitions[schemaDefinition]
+      const def = extendedMetaSchema.definitions[schemaDefinition];
 
-      if(!def)
-        throw new Error(`${schemaDefinition} does not exist, cannot apply extension ${name}`)
+      if (!def)
+        throw new Error(
+          `${schemaDefinition} does not exist, cannot apply extension ${name}`
+        );
 
-      if(def.properties[name])
-        throw new Error(`${name} already exists in ${schemaDefinition}, cannot apply extension ${name}`)
+      if (def.properties[name])
+        throw new Error(
+          `${name} already exists in ${schemaDefinition}, cannot apply extension ${name}`
+        );
 
-      def.properties[name] = {type:schema.type, title: name, description, summary}
-    })
-  })
+      def.properties[name] = {
+        type: schema.type,
+        title: name,
+        description,
+        summary,
+      };
+    });
+  });
 
-  return extendedMetaSchema
+  return extendedMetaSchema;
 }
 
 export default applyExtensionSpec;
