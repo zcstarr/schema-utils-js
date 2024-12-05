@@ -48,9 +48,35 @@ describe("dereferenceDocument", () => {
   });
 
   it("derefs simple stuff", async () => {
-    expect.assertions(7);
+    expect.assertions(21);
     const testDoc = {
       ...workingDocument,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      "x-extensions": [] as any,
+      "x-test-extensions": {
+        testExt: {
+          name: "x-test-extension",
+          version: "1.0.0",
+          description: "test extension",
+          openrpcExtension: "1.0.0",
+          externalDocumentation: {
+            url: "https://example.com",
+            description: "test extension",
+          },
+          restricted: ["methodObject", "contentDescriptorObject"],
+          schema: {
+            type: "boolean",
+            description: "test extension",
+          },
+        },
+        testExt2: {
+          name: "x-test-extension-2",
+          version: "1.0.0",
+          description: "test extension 2",
+          restricted: ["methodObject"],
+          schema: { $ref: "#/components/schemas/bigOlExt" },
+        },
+      },
       "x-methods": {
         foobar: {
           name: "foobar",
@@ -65,6 +91,7 @@ describe("dereferenceDocument", () => {
         schemas: {
           bigOlBaz: { $ref: "#/components/schemas/bigOlFoo" },
           bigOlFoo: { title: "bigOlFoo", type: "string" },
+          bigOlExt: { type: "string", description: "test extension value" },
         },
         contentDescriptors: {
           bazerino: {
@@ -114,9 +141,33 @@ describe("dereferenceDocument", () => {
       },
     });
     testDoc.methods.push({ $ref: "#/x-methods/foobar" });
-
+    testDoc["x-extensions"].push({ $ref: "#/x-test-extensions/testExt" });
+    testDoc["x-extensions"].push({ $ref: "#/x-test-extensions/testExt2" });
     const document = await dereferenceDocument(testDoc);
     const docMethods = document.methods as MethodObject[];
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const docExtensions = document["x-extensions"] as any[];
+    expect(docExtensions).toBeDefined();
+    expect(docExtensions[0]).toBeDefined();
+    expect(docExtensions[0].name).toBe("x-test-extension");
+    expect(docExtensions[0].description).toBe("test extension");
+    expect(docExtensions[0].openrpcExtension).toBe("1.0.0");
+    expect(docExtensions[0].externalDocumentation.url).toBe(
+      "https://example.com"
+    );
+    expect(docExtensions[0].externalDocumentation.description).toBe(
+      "test extension"
+    );
+    expect(docExtensions[0].schema.type).toBe("boolean");
+    expect(docExtensions[0].schema.description).toBe("test extension");
+
+    expect(docExtensions[1].name).toBe("x-test-extension-2");
+    expect(docExtensions[1].description).toBe("test extension 2");
+    expect(docExtensions[1].restricted).toEqual(["methodObject"]);
+    expect(docExtensions[1].schema.type).toBe("string");
+    expect(docExtensions[1].schema.description).toBe("test extension value");
+
     expect(docMethods).toBeDefined();
     expect(docMethods[0]).toBeDefined();
     expect(docMethods[0].params[0]).toBeDefined();
@@ -237,11 +288,9 @@ describe("dereferenceDocument", () => {
     const docMethods = document.methods as MethodObject[];
     expect(docMethods).toBeDefined();
     expect(docMethods[0]).toBeDefined();
-    expect(
-      () => {
-        JSON.stringify(document)
-      }
-    ).not.toThrow();
+    expect(() => {
+      JSON.stringify(document);
+    }).not.toThrow();
   });
 
   it("interdependent refs", async () => {
