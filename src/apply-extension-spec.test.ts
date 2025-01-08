@@ -4,6 +4,7 @@ import goodSchema from "./extension-good-schema.json";
 import getExtendedMetaSchema from "./get-extended-metaschema";
 
 describe("applyExtensionSpec", () => {
+
   it("should successfully apply extension spec to meta schema", () => {
     const result = applyExtensionSpec(goodSchema as OpenrpcDocument, getExtendedMetaSchema());
     

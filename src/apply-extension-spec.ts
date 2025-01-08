@@ -30,10 +30,10 @@ function applyExtensionSpec(document: OpenRPC, metaSchema: any): any {
         );
 
       def.properties[name] = {
-        type: schema.type,
         title: name,
         description,
         summary,
+        ...schema,
       };
     });
   });
