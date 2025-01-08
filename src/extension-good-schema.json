@@ -53,7 +53,7 @@
       "restricted": ["methodObject"],
       "schema": {
         "type": "boolean",
-        "description": "wether or not this method is a notification or not"
+        "description": "Whether or not this method is a notification or not"
       }
     }
   ]

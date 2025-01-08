@@ -12,7 +12,7 @@ describe("applyExtensionSpec", () => {
     const methodObjectDef = result.definitions.methodObject;
     expect(methodObjectDef.properties["x-notification"]).toBeDefined();
     expect(methodObjectDef.properties["x-notification"].type).toBe("boolean");
-    expect(methodObjectDef.properties["x-notification"].description).toBe("Describe a notification for OpenRPC methods");
+    expect(methodObjectDef.properties["x-notification"].description).toBe("Whether or not this method is a notification or not");
     expect(methodObjectDef.properties["x-notification"].summary).toBe("OpenRPC Notification");
   });
 
