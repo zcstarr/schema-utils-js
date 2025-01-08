@@ -1,5 +1,5 @@
 import Dereferencer from "@json-schema-tools/dereferencer";
-import { OpenrpcDocument as OpenRPC, ReferenceObject, ExamplePairingObject, JSONSchema, SchemaComponents, ContentDescriptorComponents, ContentDescriptorObject, OpenrpcDocument, MethodObject, MethodOrReference } from "@open-rpc/meta-schema";
+import metaSchema, {OpenrpcDocument as OpenRPC, ReferenceObject, ExamplePairingObject, JSONSchema, SchemaComponents, ContentDescriptorComponents, ContentDescriptorObject, OpenrpcDocument, MethodObject, MethodOrReference } from "@open-rpc/meta-schema";
 import referenceResolver from "@json-schema-tools/reference-resolver";
 import safeStringify from "fast-safe-stringify";
 
@@ -46,6 +46,13 @@ const derefItems = async (items: ReferenceObject[], doc: OpenRPC, resolver: Refe
     dereffed.push(await derefItem(i, doc, resolver))
   }
   return dereffed;
+};
+
+const matchDerefItems = async (items: ReferenceObject[] | ReferenceObject, doc: OpenRPC, resolver: ReferenceResolver) => {
+  if(Array.isArray(items)){
+    return derefItems(items, doc, resolver);
+  }
+  return derefItem(items, doc, resolver);
 };
 
 const handleSchemaWithSchemaComponents = async (s: JSONSchema, schemaComponents: SchemaComponents | undefined) => {
@@ -115,6 +122,46 @@ const handleSchemasInsideContentDescriptorComponents = async (doc: OpenrpcDocume
 
   return doc;
 };
+
+type DefinitionsMap = { [key: string]: string[] };
+
+function createDefinitionsMap(schema: any): DefinitionsMap {
+  const definitionsMap: DefinitionsMap = {};
+  Object.entries(schema.properties).forEach(([key, value]) => {
+    if (value && typeof value === "object" && "$ref" in value) {
+      const definitionName = (value["$ref"] as string).split("/").pop();
+      if (definitionName && definitionName !== "referenceObject") {
+        if (!definitionsMap[definitionName]) {
+          definitionsMap[definitionName] = [];
+        }
+        definitionsMap[definitionName].push(key);
+      }
+    } else if (
+      value &&
+      typeof value === "object" &&
+      "items" in value &&
+      value.items &&
+      typeof value.items === "object" &&
+      "oneOf" in value.items
+    ) {
+      (value.items["oneOf"] as any[]).forEach((item: any) => {
+        const definitionName = (item["$ref"] as string).split("/").pop();
+        if (definitionName && definitionName !== "referenceObject") {
+          if (!definitionsMap[definitionName]) {
+            definitionsMap[definitionName] = [];
+          }
+          definitionsMap[definitionName].push(key);
+        }
+      });
+    }
+  });
+  return definitionsMap;
+}
+
+function resolveDefinition(definitionsMap: DefinitionsMap, definitionKey: string): string[] {
+    return definitionsMap[definitionKey] || [];
+}
+
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const handleExtension = async (
@@ -232,11 +279,20 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
   derefDoc = await handleSchemaComponents(derefDoc);
   derefDoc = await handleSchemasInsideContentDescriptorComponents(derefDoc);
 
+
+  const definitionsMap = createDefinitionsMap(metaSchema);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const extensions = [] as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const extensionDerefs = [] as any;
+
   if (derefDoc["x-extensions"]) {
     for (const extension of derefDoc["x-extensions"]) {
-      extensions.push(await handleExtension(extension, derefDoc, resolver));
+      const derefedExtension = await handleExtension(extension, derefDoc, resolver);
+      extensions.push(derefedExtension);
+      for (const def of derefedExtension.restricted){
+        extensionDerefs.push({extensionName: derefedExtension.name, docNames: resolveDefinition(definitionsMap, def)});
+      }
     }
     derefDoc["x-extensions"] = extensions;
   }
@@ -246,6 +302,20 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
   for (const method of derefDoc.methods) {
     methods.push(await handleMethod(method, derefDoc, resolver));
   }
+
+  for (const extension of extensionDerefs){
+    for(const docName of extension.docNames){
+      if(derefDoc[docName]){
+        for(const item of derefDoc[docName]){
+          console.log("item", item)
+          if(item[extension.extensionName]){
+            item[extension.extensionName] = await matchDerefItems(item[extension.extensionName], derefDoc, resolver);
+          }
+        }
+      }
+    }
+  }
+
 
   derefDoc.methods = methods;
 

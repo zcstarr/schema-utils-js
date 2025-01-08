@@ -48,7 +48,22 @@ describe("dereferenceDocument", () => {
   });
 
   it("derefs simple stuff", async () => {
-    expect.assertions(21);
+    expect.assertions(22);
+   const extendedDoc = {
+           methods: workingDocument.methods.concat([
+            {
+              name: "extendedFoobar",
+              "x-test-extension":{
+                "$ref": "#/components/schemas/testExtValue"
+              },
+              params: [],
+              result: {
+                name: "extededabcfoo",
+                schema: { type: "number" },
+              },
+            },
+           ])
+    }
     const testDoc = {
       ...workingDocument,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -92,6 +107,7 @@ describe("dereferenceDocument", () => {
           bigOlBaz: { $ref: "#/components/schemas/bigOlFoo" },
           bigOlFoo: { title: "bigOlFoo", type: "string" },
           bigOlExt: { type: "string", description: "test extension value" },
+          testExtValue: { type: "boolean", description: "test extension value" },
         },
         contentDescriptors: {
           bazerino: {
@@ -141,6 +157,7 @@ describe("dereferenceDocument", () => {
       },
     });
     testDoc.methods.push({ $ref: "#/x-methods/foobar" });
+    testDoc.methods.push(...extendedDoc.methods);
     testDoc["x-extensions"].push({ $ref: "#/x-test-extensions/testExt" });
     testDoc["x-extensions"].push({ $ref: "#/x-test-extensions/testExt2" });
     const document = await dereferenceDocument(testDoc);
@@ -167,6 +184,8 @@ describe("dereferenceDocument", () => {
     expect(docExtensions[1].restricted).toEqual(["methodObject"]);
     expect(docExtensions[1].schema.type).toBe("string");
     expect(docExtensions[1].schema.description).toBe("test extension value");
+
+    expect(docMethods[2]['x-test-extension']).toBe(testDoc.components.schemas.testExtValue);
 
     expect(docMethods).toBeDefined();
     expect(docMethods[0]).toBeDefined();
