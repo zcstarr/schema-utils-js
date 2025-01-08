@@ -307,7 +307,6 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
     for(const docName of extension.docNames){
       if(derefDoc[docName]){
         for(const item of derefDoc[docName]){
-          console.log("item", item)
           if(item[extension.extensionName]){
             item[extension.extensionName] = await matchDerefItems(item[extension.extensionName], derefDoc, resolver);
           }
