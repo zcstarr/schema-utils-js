@@ -48,7 +48,7 @@ describe("dereferenceDocument", () => {
   });
 
   it("derefs simple stuff", async () => {
-    expect.assertions(24);
+    expect.assertions(28);
    const extendedDoc = {
            methods: workingDocument.methods.concat([
             {
@@ -71,7 +71,13 @@ describe("dereferenceDocument", () => {
     
 
     const testDoc = {
-      ...workingDocument,
+      ...{...workingDocument, info: {
+        title: "foo",
+        version: "1",
+        "x-test-extension": {
+          "$ref": "#/components/x-test-extension"
+        },
+      }},
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       "x-extensions": [] as any,
       "x-test-extensions": {
@@ -84,7 +90,7 @@ describe("dereferenceDocument", () => {
             url: "https://example.com",
             description: "test extension",
           },
-          restricted: ["methodObject"],
+          restricted: ["methodObject","contentDescriptorObject","serverObject","infoObject"],
           schema: {
             type: "boolean",
             description: "test extension",
@@ -121,6 +127,7 @@ describe("dereferenceDocument", () => {
         },
       },
       components: {
+        "x-test-extension": true,
         schemas: {
           bigOlBaz: { $ref: "#/components/schemas/bigOlFoo" },
           bigOlFoo: { title: "bigOlFoo", type: "string" },
@@ -134,6 +141,7 @@ describe("dereferenceDocument", () => {
           },
           barf: {
             name: "barf",
+            "x-test-extension": true,
             schema: { $ref: "#/components/schemas/bigOlFoo" },
           },
         },
@@ -158,12 +166,27 @@ describe("dereferenceDocument", () => {
     };
     testDoc.methods.push({
       tags: [{ $ref: "#/components/tags/foobydooby" }],
+      "x-test-extension": {
+        "$ref": "#/components/x-test-extension"
+      },
       errors: [{ $ref: "#/components/errors/bigBadError" }],
       examples: [{ $ref: "#/components/examplePairingObjects/testy" }],
+      links: [{
+        name: "fooLink",
+        url: "https://example.com",
+        description: "fooLink",
+        server: {
+          url: "https://example.com",
+          "x-test-extension": {
+            "$ref": "#/components/x-test-extension"
+          },
+        },
+      }],
       name: "foo",
       params: [
         { $ref: "#/components/contentDescriptors/bazerino" },
         {
+          "x-test-extension": true, 
           name: "blah blah",
           schema: { $ref: "#/components/schemas/bigOlBaz" },
         },
@@ -184,6 +207,7 @@ describe("dereferenceDocument", () => {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const docExtensions = document["x-extensions"] as any[];
+    expect(document.info["x-test-extension"]).toBe(true);
     expect(docExtensions).toBeDefined();
     expect(docExtensions[0]).toBeDefined();
     expect(docExtensions[0].name).toBe("x-test-extension");
@@ -214,6 +238,11 @@ describe("dereferenceDocument", () => {
     expect((docMethods[0].params[0] as ContentDescriptorObject).name).toBe(
       "bazerino"
     );
+    expect((docMethods[0].params[1] as any)["x-test-extension"]).toBe(true);
+    expect((docMethods[0].params[2] as any)["x-test-extension"]).toBe(true);
+    expect((docMethods[0].links as any)[0]["server"]["x-test-extension"]).toBe(true);
+    //expect((docMethods[0].links?[1] as any)["server"]["x-test-extension"]).toBe(true);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(docMethods[0].result).toBeDefined();
     expect(
       (

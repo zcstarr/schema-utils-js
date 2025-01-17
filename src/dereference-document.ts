@@ -125,42 +125,208 @@ const handleSchemasInsideContentDescriptorComponents = async (doc: OpenrpcDocume
 
 type DefinitionsMap = { [key: string]: string[] };
 
-function createDefinitionsMap(schema: any): DefinitionsMap {
-  const definitionsMap: DefinitionsMap = {};
-  Object.entries(schema.properties).forEach(([key, value]) => {
-    if (value && typeof value === "object" && "$ref" in value) {
-      const definitionName = (value["$ref"] as string).split("/").pop();
-      if (definitionName && definitionName !== "referenceObject") {
-        if (!definitionsMap[definitionName]) {
-          definitionsMap[definitionName] = [];
-        }
-        definitionsMap[definitionName].push(key);
+// remap the definitions map to remove the definitions. prefix and replace it with the parent object type
+const remap = (definitionsMap: DefinitionsMap): DefinitionsMap => {
+  const remappedDefinitions: DefinitionsMap = {};
+  const graph = new Map<string, Set<string>>();
+  const resolved = new Set<string>();
+
+  // Build dependency graph
+  for (const [key, paths] of Object.entries(definitionsMap)) {
+    graph.set(key, new Set());
+    for (const path of paths) {
+      const parts = path.split('.');
+      if(parts.length === 1){
+        graph.get(key)?.add(path);
       }
-    } else if (
-      value &&
-      typeof value === "object" &&
-      "items" in value &&
-      value.items &&
-      typeof value.items === "object" &&
-      "oneOf" in value.items
-    ) {
-      (value.items["oneOf"] as any[]).forEach((item: any) => {
-        const definitionName = (item["$ref"] as string).split("/").pop();
-        if (definitionName && definitionName !== "referenceObject") {
-          if (!definitionsMap[definitionName]) {
-            definitionsMap[definitionName] = [];
-          }
-          definitionsMap[definitionName].push(key);
+      else if (path.startsWith('definitions.')) {
+        parts.shift(); // Remove 'definitions'
+        const parentType = parts[0];
+        if (parentType && parentType !== key) {
+          graph.get(key)?.add(parentType);
         }
+      }
+    }
+  }
+
+  // Helper to resolve a definition and its dependencies
+  const resolveDef = (key: string) => {
+    if (resolved.has(key)) return;
+    
+    // Resolve dependencies first
+    graph.get(key)?.forEach(dep => resolveDef(dep));
+    if(!definitionsMap[key]) {
+      return key; 
+    }
+
+    const accumulatedPaths: string[] = [];
+    definitionsMap[key].forEach((path) => {
+      if (!path.startsWith('definitions.')) {
+        accumulatedPaths.push(path);
+        return;
+      }
+
+      const parts = path.split('.');
+      parts.shift(); // Remove 'definitions'
+      const parentType = parts.shift();
+      const remainingPath = parts.join('.');
+
+      if (!parentType || !remappedDefinitions[parentType]) {
+        accumulatedPaths.push(remainingPath);
+        return;
+      }
+
+      remappedDefinitions[parentType].forEach((basePath:string) => {
+        const newPath = basePath ? `${basePath}.${remainingPath}` : remainingPath;
+        accumulatedPaths.push(newPath);
+      });
+    });
+    remappedDefinitions[key] =  accumulatedPaths
+
+    resolved.add(key);
+  };
+
+  // Resolve all definitions
+  Object.keys(definitionsMap).forEach(resolveDef);
+
+  return remappedDefinitions;
+};
+
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function createDefinitionsMap(schema: any, path = ""): DefinitionsMap {
+  const definitionsMap: DefinitionsMap = {};
+
+  const simplifyPath = (path: string): string => {
+    // Remove .items, .patternProperties, and anything after them
+    return path.split(/\.(items|patternProperties)/)[0];
+  };
+
+  const addToMap = (definitionName: string, currentPath: string) => {
+    if (definitionName && definitionName !== "referenceObject") {
+      if (!definitionsMap[definitionName]) {
+        definitionsMap[definitionName] = [];
+      }
+      const simplifiedPath = simplifyPath(currentPath);
+      if (simplifiedPath && !definitionsMap[definitionName].includes(simplifiedPath)) {
+        definitionsMap[definitionName].push(simplifiedPath);
+      }
+    }
+  };
+
+  // Handle object properties recursively
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const traverseObject = (obj: any, currentPath: string) => {
+    if (!obj || typeof obj !== "object") return;
+
+    // Handle direct $ref
+    if ("$ref" in obj) {
+      const definitionName = obj["$ref"].split("/").pop();
+      addToMap(definitionName, currentPath);
+    }
+
+    // Handle arrays with items
+    if ("items" in obj) {
+      // Direct $ref in items
+      if (obj.items.$ref) {
+        const definitionName = obj.items.$ref.split("/").pop();
+        addToMap(definitionName, `${currentPath}.items`);
+      }
+      // oneOf in items
+      if (obj.items.oneOf) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        obj.items.oneOf.forEach((item: any) => {
+          if (item.$ref) {
+            const definitionName = item.$ref.split("/").pop();
+            addToMap(definitionName, `${currentPath}.items`);
+          }
+        });
+      }
+    }
+
+    // Handle properties
+    if ("properties" in obj) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      Object.entries(obj.properties).forEach(([key, value]: [string, any]) => {
+        const newPath = currentPath ? `${currentPath}.${key}` : key;
+        traverseObject(value, newPath);
       });
     }
-  });
-  return definitionsMap;
+
+    // Handle oneOf at current level
+    if ("oneOf" in obj) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      obj.oneOf.forEach((item: any) => {
+        if (item.$ref) {
+          const definitionName = item.$ref.split("/").pop();
+          addToMap(definitionName, currentPath);
+        }
+        traverseObject(item, currentPath);
+      });
+    }
+
+    // Recursively traverse all other properties
+    Object.entries(obj).forEach(([key, value]) => {
+      if (value && typeof value === "object" && key !== "properties" && key !== "items" && key !== "oneOf") {
+        const newPath = currentPath ? `${currentPath}.${key}` : key;
+        traverseObject(value, newPath);
+      }
+    });
+  };
+
+  traverseObject(schema, path);
+
+  return remap(definitionsMap);
 }
 
 function resolveDefinition(definitionsMap: DefinitionsMap, definitionKey: string): string[] {
     return definitionsMap[definitionKey] || [];
 }
+
+
+interface DocResult {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  items: any[]; // Single array of all matching objects
+}
+
+// Traverses an object based on a dot-separated path and returns all matching objects at that path
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getDoc = (docName: string, derefDoc: any): DocResult => {
+  const docNames = docName.split(".");
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const traverseObject = (obj: any, pathParts: string[]): any[] => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const results: any[] = [];
+    
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const traverse = (current: any, depth: number) => {
+      if (!current) return;
+      
+      // If we've reached our target depth, collect this object
+      if (depth === pathParts.length) {
+        results.push(current);
+        return;
+      }
+      
+      const part = pathParts[depth];
+      const next = current[part];
+      
+      // Handle both arrays and objects
+      if (Array.isArray(next)) {
+        next.forEach(item => traverse(item, depth + 1));
+      } else if (next && typeof next === 'object') {
+        traverse(next, depth + 1);
+      }
+    };
+    
+    traverse(obj, 0);
+    return results;
+  };
+  
+  return { items: traverseObject(derefDoc, docNames) };
+};
+
 
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -303,18 +469,22 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
     methods.push(await handleMethod(method, derefDoc, resolver));
   }
 
-  for (const extension of extensionDerefs){
-    for(const docName of extension.docNames){
-      if(derefDoc[docName]){
-        for(const item of derefDoc[docName]){
-          if(item[extension.extensionName]){
-            item[extension.extensionName] = await matchDerefItems(item[extension.extensionName], derefDoc, resolver);
-          }
+  for (const extension of extensionDerefs) {
+    for (const docName of extension.docNames) {
+      const { items } = getDoc(docName, derefDoc);
+      
+      // Process all matching items that have the extension
+      for (const item of items) {
+        if (item && item[extension.extensionName]) {
+          item[extension.extensionName] = await matchDerefItems(
+            item[extension.extensionName],
+            derefDoc,
+            resolver
+          );
         }
       }
     }
   }
-
 
   derefDoc.methods = methods;
 
