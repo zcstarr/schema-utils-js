@@ -12,8 +12,10 @@ const exampleDoc = {
 
 describe("MethodRefUnexpectedError", () => {
   it("can be instantiated", () => {
-    const error = new MethodRefUnexpectedError("#/components/stuff/floobar", exampleDoc);
+    const error = new MethodRefUnexpectedError(
+      "#/components/stuff/floobar",
+      exampleDoc
+    );
     expect(error).toBeInstanceOf(MethodRefUnexpectedError);
   });
 });
-

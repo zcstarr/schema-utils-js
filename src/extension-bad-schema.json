@@ -33,10 +33,7 @@
               "description": "The content of the data."
             }
           },
-          "required": [
-            "id",
-            "data"
-          ]
+          "required": ["id", "data"]
         },
         "description": "The result object containing the requested data."
       }
@@ -53,9 +50,7 @@
         "description": "github",
         "url": "https://github.com/open-rpc/specification-extensions-spec/examples/x-notification-openrpc-ext.json"
       },
-      "restricted": [
-        "methodObject"
-      ],
+      "restricted": ["methodObject"],
       "schema": {
         "type": "boolean",
         "description": "wether or not this method is a notification or not"

@@ -1,8 +1,6 @@
-import * as _fs from "fs-extra";
 import dereferenceDocument, {
   OpenRPCDocumentDereferencingError,
 } from "./dereference-document";
-import defaultResolver from "@json-schema-tools/reference-resolver";
 import {
   OpenrpcDocument,
   ContentDescriptorObject,
@@ -10,7 +8,6 @@ import {
   MethodObject,
 } from "@open-rpc/meta-schema";
 import { JSONSchemaObject } from "@json-schema-tools/meta-schema";
-import { JSONSchema7 } from "json-schema";
 
 const workingDocument: OpenrpcDocument = {
   info: {
@@ -49,35 +46,37 @@ describe("dereferenceDocument", () => {
 
   it("derefs simple stuff", async () => {
     expect.assertions(28);
-   const extendedDoc = {
-           methods: workingDocument.methods.concat([
-            {
-              name: "extendedFoobar",
-              "x-test-extension":{
-                "$ref": "#/components/schemas/testExtValue"
-              },
-              "x-test-extension-3":[
-                  {"$ref": "#/components/schemas/testExtValue"},
-                  {"$ref": "#/components/schemas/testExtValue"}
-              ],
-              params: [],
-              result: {
-                name: "extededabcfoo",
-                schema: { type: "number" },
-              },
-            },
-           ])
-    }
-    
+    const extendedDoc = {
+      methods: workingDocument.methods.concat([
+        {
+          name: "extendedFoobar",
+          "x-test-extension": {
+            $ref: "#/components/schemas/testExtValue",
+          },
+          "x-test-extension-3": [
+            { $ref: "#/components/schemas/testExtValue" },
+            { $ref: "#/components/schemas/testExtValue" },
+          ],
+          params: [],
+          result: {
+            name: "extededabcfoo",
+            schema: { type: "number" },
+          },
+        },
+      ]),
+    };
 
     const testDoc = {
-      ...{...workingDocument, info: {
-        title: "foo",
-        version: "1",
-        "x-test-extension": {
-          "$ref": "#/components/x-test-extension"
+      ...{
+        ...workingDocument,
+        info: {
+          title: "foo",
+          version: "1",
+          "x-test-extension": {
+            $ref: "#/components/x-test-extension",
+          },
         },
-      }},
+      },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       "x-extensions": [] as any,
       "x-test-extensions": {
@@ -90,7 +89,12 @@ describe("dereferenceDocument", () => {
             url: "https://example.com",
             description: "test extension",
           },
-          restricted: ["methodObject","contentDescriptorObject","serverObject","infoObject"],
+          restricted: [
+            "methodObject",
+            "contentDescriptorObject",
+            "serverObject",
+            "infoObject",
+          ],
           schema: {
             type: "boolean",
             description: "test extension",
@@ -108,12 +112,12 @@ describe("dereferenceDocument", () => {
           version: "1.0.0",
           description: "test extension 3",
           restricted: ["methodObject"],
-          schema: { 
+          schema: {
             type: "array",
             items: {
-              $ref: "#/components/schemas/testExtValue"
-            }
-           },
+              $ref: "#/components/schemas/testExtValue",
+            },
+          },
         },
       },
       "x-methods": {
@@ -132,7 +136,10 @@ describe("dereferenceDocument", () => {
           bigOlBaz: { $ref: "#/components/schemas/bigOlFoo" },
           bigOlFoo: { title: "bigOlFoo", type: "string" },
           bigOlExt: { type: "string", description: "test extension value" },
-          testExtValue: { type: "boolean", description: "test extension value" },
+          testExtValue: {
+            type: "boolean",
+            description: "test extension value",
+          },
         },
         contentDescriptors: {
           bazerino: {
@@ -167,26 +174,28 @@ describe("dereferenceDocument", () => {
     testDoc.methods.push({
       tags: [{ $ref: "#/components/tags/foobydooby" }],
       "x-test-extension": {
-        "$ref": "#/components/x-test-extension"
+        $ref: "#/components/x-test-extension",
       },
       errors: [{ $ref: "#/components/errors/bigBadError" }],
       examples: [{ $ref: "#/components/examplePairingObjects/testy" }],
-      links: [{
-        name: "fooLink",
-        url: "https://example.com",
-        description: "fooLink",
-        server: {
+      links: [
+        {
+          name: "fooLink",
           url: "https://example.com",
-          "x-test-extension": {
-            "$ref": "#/components/x-test-extension"
+          description: "fooLink",
+          server: {
+            url: "https://example.com",
+            "x-test-extension": {
+              $ref: "#/components/x-test-extension",
+            },
           },
         },
-      }],
+      ],
       name: "foo",
       params: [
         { $ref: "#/components/contentDescriptors/bazerino" },
         {
-          "x-test-extension": true, 
+          "x-test-extension": true,
           name: "blah blah",
           schema: { $ref: "#/components/schemas/bigOlBaz" },
         },
@@ -228,9 +237,15 @@ describe("dereferenceDocument", () => {
     expect(docExtensions[1].schema.type).toBe("string");
     expect(docExtensions[1].schema.description).toBe("test extension value");
 
-    expect(docMethods[2]['x-test-extension']).toBe(testDoc.components.schemas.testExtValue);
-    expect(docMethods[2]['x-test-extension-3'][0]).toBe(testDoc.components.schemas.testExtValue);
-    expect(docMethods[2]['x-test-extension-3'][1]).toBe(testDoc.components.schemas.testExtValue);
+    expect(docMethods[2]["x-test-extension"]).toBe(
+      testDoc.components.schemas.testExtValue
+    );
+    expect(docMethods[2]["x-test-extension-3"][0]).toBe(
+      testDoc.components.schemas.testExtValue
+    );
+    expect(docMethods[2]["x-test-extension-3"][1]).toBe(
+      testDoc.components.schemas.testExtValue
+    );
 
     expect(docMethods).toBeDefined();
     expect(docMethods[0]).toBeDefined();
@@ -238,11 +253,14 @@ describe("dereferenceDocument", () => {
     expect((docMethods[0].params[0] as ContentDescriptorObject).name).toBe(
       "bazerino"
     );
-    expect((docMethods[0].params[1] as any)["x-test-extension"]).toBe(true);
-    expect((docMethods[0].params[2] as any)["x-test-extension"]).toBe(true);
-    expect((docMethods[0].links as any)[0]["server"]["x-test-extension"]).toBe(true);
-    //expect((docMethods[0].links?[1] as any)["server"]["x-test-extension"]).toBe(true);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    expect((docMethods[0].params[1] as any)["x-test-extension"]).toBe(true);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    expect((docMethods[0].params[2] as any)["x-test-extension"]).toBe(true);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    expect((docMethods[0].links as any)[0]["server"]["x-test-extension"]).toBe(
+      true
+    );
     expect(docMethods[0].result).toBeDefined();
     expect(
       (
@@ -270,8 +288,7 @@ describe("dereferenceDocument", () => {
         {
           name: "wallet_createSession",
           paramStructure: "by-name",
-          params: [
-          ],
+          params: [],
           result: {
             name: "wallet_createSessionResult",
             schema: {
@@ -283,9 +300,8 @@ describe("dereferenceDocument", () => {
               },
             },
           },
-          examples: [
-          ],
-          errors: []
+          examples: [],
+          errors: [],
         },
       ],
       components: {
@@ -552,9 +568,9 @@ describe("dereferenceDocument", () => {
         },
       },
     };
-
     const result = (await dereferenceDocument(
       testDoc as OpenrpcDocument
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     )) as any;
 
     expect(result.methods[0].links[0]).toBe(testDoc.components.links.fooLink);
@@ -583,6 +599,7 @@ describe("dereferenceDocument", () => {
 
     const result = (await dereferenceDocument(
       testDoc as OpenrpcDocument
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     )) as any;
 
     expect(result.methods[0].result.schema.type).toBe("string");
@@ -621,6 +638,7 @@ describe("dereferenceDocument", () => {
 
     const result = (await dereferenceDocument(
       testDoc as OpenrpcDocument
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     )) as any;
 
     expect(result.methods[0].result.schema.properties.foo).toBe(
@@ -661,6 +679,7 @@ describe("dereferenceDocument", () => {
     };
 
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (await dereferenceDocument(testDoc as OpenrpcDocument)) as any;
     } catch (e) {
       expect(e).toBeInstanceOf(OpenRPCDocumentDereferencingError);

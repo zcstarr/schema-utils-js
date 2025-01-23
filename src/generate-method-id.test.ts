@@ -1,4 +1,7 @@
-import { generateMethodParamId, generateMethodResultId } from "./generate-method-id";
+import {
+  generateMethodParamId,
+  generateMethodResultId,
+} from "./generate-method-id";
 import { MethodObject } from "@open-rpc/meta-schema";
 
 describe("methodParamId", () => {
@@ -33,8 +36,9 @@ describe("methodParamId", () => {
         result: { name: "baz", schema: {} },
       } as MethodObject;
 
-      expect(() => generateMethodParamId(method, { name: "123", schema: {} }))
-        .toThrow("Content Descriptor not found in method.");
+      expect(() =>
+        generateMethodParamId(method, { name: "123", schema: {} })
+      ).toThrow("Content Descriptor not found in method.");
     });
   });
 
@@ -59,7 +63,9 @@ describe("methodParamId", () => {
         result: { name: "baz", schema: {} },
       } as MethodObject;
 
-      expect(() => generateMethodParamId(method, { name: "123", schema: {} })).toThrow();
+      expect(() =>
+        generateMethodParamId(method, { name: "123", schema: {} })
+      ).toThrow();
     });
   });
 });
@@ -82,7 +88,8 @@ describe("methodResultId", () => {
       result: { name: "baz", schema: {} },
     };
 
-    expect(() => generateMethodResultId(method, { name: "peepee", schema: {} }))
-      .toThrow("Content Descriptor not found in method.");
+    expect(() =>
+      generateMethodResultId(method, { name: "peepee", schema: {} })
+    ).toThrow("Content Descriptor not found in method.");
   });
 });

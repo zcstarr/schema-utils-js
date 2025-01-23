@@ -18,11 +18,14 @@ export default class ParameterValidationError implements Error {
   constructor(
     public paramIndex: number | string,
     public expectedSchema: JSONSchema,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     public receievedParam: any,
-    errors: ErrorObject[],
+    errors: ErrorObject[]
   ) {
     this.message = [
-      `Expected param at ${typeof paramIndex === "string" ? "key" : "position"}: `,
+      `Expected param at ${
+        typeof paramIndex === "string" ? "key" : "position"
+      }: `,
       paramIndex,
       " to match the json schema: ",
       JSON.stringify(expectedSchema, undefined, "  "),
@@ -30,7 +33,7 @@ export default class ParameterValidationError implements Error {
       receievedParam,
       ".",
       "The Validation errors: \n",
-      JSON.stringify(errors)
+      JSON.stringify(errors),
     ].join("");
   }
 }

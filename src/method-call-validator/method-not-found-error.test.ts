@@ -22,9 +22,14 @@ describe("MethodNotFoundError", () => {
   });
 
   it("properly parses params in to a string", () => {
-    const error = new MethodNotFoundError("floobar", exampleDoc, ["abc", { abc: 123 }, 123]);
+    const error = new MethodNotFoundError("floobar", exampleDoc, [
+      "abc",
+      { abc: 123 },
+      123,
+    ]);
     expect(error).toBeInstanceOf(MethodNotFoundError);
-    expect(error.message).toBe(`Method Not Found Error for OpenRPC API named "testerino"
+    expect(error.message)
+      .toBe(`Method Not Found Error for OpenRPC API named "testerino"
 The requested method: "floobar" not a valid method.
 Params:
 "abc"
@@ -43,8 +48,14 @@ Params:
         },
       },
     ];
-    const error = new MethodNotFoundError("floobar", exampleDoc, ["abc", { abc: 123 }, 123]);
+    const error = new MethodNotFoundError("floobar", exampleDoc, [
+      "abc",
+      { abc: 123 },
+      123,
+    ]);
     expect(error).toBeInstanceOf(MethodNotFoundError);
-    expect(error.message).toContain("Valid method names are as follows: dooptiedoo");
+    expect(error.message).toContain(
+      "Valid method names are as follows: dooptiedoo"
+    );
   });
 });

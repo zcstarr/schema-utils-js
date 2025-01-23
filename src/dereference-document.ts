@@ -1,9 +1,20 @@
 import Dereferencer from "@json-schema-tools/dereferencer";
-import metaSchema, {OpenrpcDocument as OpenRPC, ReferenceObject, ExamplePairingObject, JSONSchema, SchemaComponents, ContentDescriptorComponents, ContentDescriptorObject, OpenrpcDocument, MethodObject, MethodOrReference } from "@open-rpc/meta-schema";
+import metaSchema, {
+  OpenrpcDocument as OpenRPC,
+  ReferenceObject,
+  ExamplePairingObject,
+  JSONSchema,
+  SchemaComponents,
+  ContentDescriptorComponents,
+  ContentDescriptorObject,
+  OpenrpcDocument,
+  MethodObject,
+  MethodOrReference,
+} from "@open-rpc/meta-schema";
 import referenceResolver from "@json-schema-tools/reference-resolver";
 import safeStringify from "fast-safe-stringify";
 
-export type ReferenceResolver = typeof referenceResolver
+export type ReferenceResolver = typeof referenceResolver;
 /**
  * Provides an error interface for OpenRPC Document dereferencing problems
  *
@@ -21,47 +32,68 @@ export class OpenRPCDocumentDereferencingError implements Error {
   }
 }
 
-const derefItem = async (item: ReferenceObject, doc: OpenRPC, resolver: ReferenceResolver) => {
+const derefItem = async (
+  item: ReferenceObject,
+  doc: OpenRPC,
+  resolver: ReferenceResolver
+) => {
   const { $ref } = item;
-  if ($ref === undefined) { return item; }
+  if ($ref === undefined) {
+    return item;
+  }
 
   try {
     // returns resolved value of the reference
-    return (await resolver.resolve($ref, doc) as any);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (await resolver.resolve($ref, doc)) as any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
-    throw new OpenRPCDocumentDereferencingError([
-      `unable to eval pointer against OpenRPC Document.`,
-      `error type: ${err.name}`,
-      `instance: ${err.instance}`,
-      `token: ${err.token}`,
-      `pointer: ${$ref}`,
-      `reference object: ${safeStringify(item)}`
-    ].join("\n"));
+    throw new OpenRPCDocumentDereferencingError(
+      [
+        `unable to eval pointer against OpenRPC Document.`,
+        `error type: ${err.name}`,
+        `instance: ${err.instance}`,
+        `token: ${err.token}`,
+        `pointer: ${$ref}`,
+        `reference object: ${safeStringify(item)}`,
+      ].join("\n")
+    );
   }
 };
 
-const derefItems = async (items: ReferenceObject[], doc: OpenRPC, resolver: ReferenceResolver) => {
+const derefItems = async (
+  items: ReferenceObject[],
+  doc: OpenRPC,
+  resolver: ReferenceResolver
+) => {
   const dereffed = [];
   for (const i of items) {
-    dereffed.push(await derefItem(i, doc, resolver))
+    dereffed.push(await derefItem(i, doc, resolver));
   }
   return dereffed;
 };
 
-const matchDerefItems = async (items: ReferenceObject[] | ReferenceObject, doc: OpenRPC, resolver: ReferenceResolver) => {
-  if(Array.isArray(items)){
+const matchDerefItems = async (
+  items: ReferenceObject[] | ReferenceObject,
+  doc: OpenRPC,
+  resolver: ReferenceResolver
+) => {
+  if (Array.isArray(items)) {
     return derefItems(items, doc, resolver);
   }
   return derefItem(items, doc, resolver);
 };
 
-const handleSchemaWithSchemaComponents = async (s: JSONSchema, schemaComponents: SchemaComponents | undefined) => {
+const handleSchemaWithSchemaComponents = async (
+  s: JSONSchema,
+  schemaComponents: SchemaComponents | undefined
+) => {
   if (s === true || s === false) {
     return Promise.resolve(s);
   }
 
   if (schemaComponents !== undefined) {
-    s.components = { schemas: schemaComponents }
+    s.components = { schemas: schemaComponents };
   }
 
   const dereffer = new Dereferencer(s);
@@ -72,17 +104,22 @@ const handleSchemaWithSchemaComponents = async (s: JSONSchema, schemaComponents:
       delete s.components;
     }
     return dereffed;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {
-    throw new OpenRPCDocumentDereferencingError([
-      "Unable to parse reference inside of JSONSchema",
-      s.title ? `Schema Title: ${s.title}` : "",
-      `error message: ${e.message}`,
-      `schema in question: ${safeStringify(s)}`
-    ].join("\n"));
+    throw new OpenRPCDocumentDereferencingError(
+      [
+        "Unable to parse reference inside of JSONSchema",
+        s.title ? `Schema Title: ${s.title}` : "",
+        `error message: ${e.message}`,
+        `schema in question: ${safeStringify(s)}`,
+      ].join("\n")
+    );
   }
 };
 
-const handleSchemaComponents = async (doc: OpenrpcDocument): Promise<OpenrpcDocument> => {
+const handleSchemaComponents = async (
+  doc: OpenrpcDocument
+): Promise<OpenrpcDocument> => {
   if (doc.components === undefined) {
     return Promise.resolve(doc);
   }
@@ -100,7 +137,9 @@ const handleSchemaComponents = async (doc: OpenrpcDocument): Promise<OpenrpcDocu
   return doc;
 };
 
-const handleSchemasInsideContentDescriptorComponents = async (doc: OpenrpcDocument): Promise<OpenrpcDocument> => {
+const handleSchemasInsideContentDescriptorComponents = async (
+  doc: OpenrpcDocument
+): Promise<OpenrpcDocument> => {
   if (doc.components === undefined) {
     return Promise.resolve(doc);
   }
@@ -117,7 +156,10 @@ const handleSchemasInsideContentDescriptorComponents = async (doc: OpenrpcDocume
   }
 
   for (const cdK of cdsKeys) {
-    cds[cdK].schema = await handleSchemaWithSchemaComponents(cds[cdK].schema, componentSchemas);
+    cds[cdK].schema = await handleSchemaWithSchemaComponents(
+      cds[cdK].schema,
+      componentSchemas
+    );
   }
 
   return doc;
@@ -135,11 +177,10 @@ const remap = (definitionsMap: DefinitionsMap): DefinitionsMap => {
   for (const [key, paths] of Object.entries(definitionsMap)) {
     graph.set(key, new Set());
     for (const path of paths) {
-      const parts = path.split('.');
-      if(parts.length === 1){
+      const parts = path.split(".");
+      if (parts.length === 1) {
         graph.get(key)?.add(path);
-      }
-      else if (path.startsWith('definitions.')) {
+      } else if (path.startsWith("definitions.")) {
         parts.shift(); // Remove 'definitions'
         const parentType = parts[0];
         if (parentType && parentType !== key) {
@@ -152,36 +193,38 @@ const remap = (definitionsMap: DefinitionsMap): DefinitionsMap => {
   // Helper to resolve a definition and its dependencies
   const resolveDef = (key: string) => {
     if (resolved.has(key)) return;
-    
+
     // Resolve dependencies first
-    graph.get(key)?.forEach(dep => resolveDef(dep));
-    if(!definitionsMap[key]) {
-      return key; 
+    graph.get(key)?.forEach((dep) => resolveDef(dep));
+    if (!definitionsMap[key]) {
+      return key;
     }
 
     const accumulatedPaths: string[] = [];
     definitionsMap[key].forEach((path) => {
-      if (!path.startsWith('definitions.')) {
+      if (!path.startsWith("definitions.")) {
         accumulatedPaths.push(path);
         return;
       }
 
-      const parts = path.split('.');
+      const parts = path.split(".");
       parts.shift(); // Remove 'definitions'
       const parentType = parts.shift();
-      const remainingPath = parts.join('.');
+      const remainingPath = parts.join(".");
 
       if (!parentType || !remappedDefinitions[parentType]) {
         accumulatedPaths.push(remainingPath);
         return;
       }
 
-      remappedDefinitions[parentType].forEach((basePath:string) => {
-        const newPath = basePath ? `${basePath}.${remainingPath}` : remainingPath;
+      remappedDefinitions[parentType].forEach((basePath: string) => {
+        const newPath = basePath
+          ? `${basePath}.${remainingPath}`
+          : remainingPath;
         accumulatedPaths.push(newPath);
       });
     });
-    remappedDefinitions[key] =  accumulatedPaths
+    remappedDefinitions[key] = accumulatedPaths;
 
     resolved.add(key);
   };
@@ -191,7 +234,6 @@ const remap = (definitionsMap: DefinitionsMap): DefinitionsMap => {
 
   return remappedDefinitions;
 };
-
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function createDefinitionsMap(schema: any, path = ""): DefinitionsMap {
@@ -208,7 +250,10 @@ function createDefinitionsMap(schema: any, path = ""): DefinitionsMap {
         definitionsMap[definitionName] = [];
       }
       const simplifiedPath = simplifyPath(currentPath);
-      if (simplifiedPath && !definitionsMap[definitionName].includes(simplifiedPath)) {
+      if (
+        simplifiedPath &&
+        !definitionsMap[definitionName].includes(simplifiedPath)
+      ) {
         definitionsMap[definitionName].push(simplifiedPath);
       }
     }
@@ -267,7 +312,13 @@ function createDefinitionsMap(schema: any, path = ""): DefinitionsMap {
 
     // Recursively traverse all other properties
     Object.entries(obj).forEach(([key, value]) => {
-      if (value && typeof value === "object" && key !== "properties" && key !== "items" && key !== "oneOf") {
+      if (
+        value &&
+        typeof value === "object" &&
+        key !== "properties" &&
+        key !== "items" &&
+        key !== "oneOf"
+      ) {
         const newPath = currentPath ? `${currentPath}.${key}` : key;
         traverseObject(value, newPath);
       }
@@ -279,10 +330,12 @@ function createDefinitionsMap(schema: any, path = ""): DefinitionsMap {
   return remap(definitionsMap);
 }
 
-function resolveDefinition(definitionsMap: DefinitionsMap, definitionKey: string): string[] {
-    return definitionsMap[definitionKey] || [];
+function resolveDefinition(
+  definitionsMap: DefinitionsMap,
+  definitionKey: string
+): string[] {
+  return definitionsMap[definitionKey] || [];
 }
-
 
 interface DocResult {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -293,41 +346,39 @@ interface DocResult {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getDoc = (docName: string, derefDoc: any): DocResult => {
   const docNames = docName.split(".");
-  
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const traverseObject = (obj: any, pathParts: string[]): any[] => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const results: any[] = [];
-    
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const traverse = (current: any, depth: number) => {
       if (!current) return;
-      
+
       // If we've reached our target depth, collect this object
       if (depth === pathParts.length) {
         results.push(current);
         return;
       }
-      
+
       const part = pathParts[depth];
       const next = current[part];
-      
+
       // Handle both arrays and objects
       if (Array.isArray(next)) {
-        next.forEach(item => traverse(item, depth + 1));
-      } else if (next && typeof next === 'object') {
+        next.forEach((item) => traverse(item, depth + 1));
+      } else if (next && typeof next === "object") {
         traverse(next, depth + 1);
       }
     };
-    
+
     traverse(obj, 0);
     return results;
   };
-  
+
   return { items: traverseObject(derefDoc, docNames) };
 };
-
-
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const handleExtension = async (
@@ -359,42 +410,75 @@ const handleExtension = async (
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-
-
-const handleMethod = async (methodOrRef: MethodOrReference, doc: OpenrpcDocument, resolver: ReferenceResolver): Promise<MethodObject> => {
+const handleMethod = async (
+  methodOrRef: MethodOrReference,
+  doc: OpenrpcDocument,
+  resolver: ReferenceResolver
+): Promise<MethodObject> => {
   let method = methodOrRef as MethodObject;
 
   if (methodOrRef.$ref !== undefined) {
-    method = await derefItem({ $ref: methodOrRef.$ref }, doc, resolver)
+    method = await derefItem({ $ref: methodOrRef.$ref }, doc, resolver);
   }
 
   if (method.tags !== undefined) {
-    method.tags = await derefItems(method.tags as ReferenceObject[], doc, resolver);
+    method.tags = await derefItems(
+      method.tags as ReferenceObject[],
+      doc,
+      resolver
+    );
   }
 
   if (method.errors !== undefined) {
-    method.errors = await derefItems(method.errors as ReferenceObject[], doc, resolver);
+    method.errors = await derefItems(
+      method.errors as ReferenceObject[],
+      doc,
+      resolver
+    );
   }
 
   if (method.links !== undefined) {
-    method.links = await derefItems(method.links as ReferenceObject[], doc, resolver);
+    method.links = await derefItems(
+      method.links as ReferenceObject[],
+      doc,
+      resolver
+    );
   }
 
   if (method.examples !== undefined) {
-    method.examples = await derefItems(method.examples as ReferenceObject[], doc, resolver);
+    method.examples = await derefItems(
+      method.examples as ReferenceObject[],
+      doc,
+      resolver
+    );
     for (const exPairing of method.examples as ExamplePairingObject[]) {
-      exPairing.params = await derefItems(exPairing.params as ReferenceObject[], doc, resolver);
+      exPairing.params = await derefItems(
+        exPairing.params as ReferenceObject[],
+        doc,
+        resolver
+      );
       if (exPairing.result !== undefined) {
-        exPairing.result = await derefItem(exPairing.result as ReferenceObject, doc, resolver);
+        exPairing.result = await derefItem(
+          exPairing.result as ReferenceObject,
+          doc,
+          resolver
+        );
       }
     }
   }
 
-  method.params = await derefItems(method.params as ReferenceObject[], doc, resolver);
+  method.params = await derefItems(
+    method.params as ReferenceObject[],
+    doc,
+    resolver
+  );
   if (method.result !== undefined) {
-    method.result = await derefItem(method.result as ReferenceObject, doc, resolver);
+    method.result = await derefItem(
+      method.result as ReferenceObject,
+      doc,
+      resolver
+    );
   }
-
 
   let componentSchemas: SchemaComponents = {};
   if (doc.components && doc.components.schemas) {
@@ -404,12 +488,18 @@ const handleMethod = async (methodOrRef: MethodOrReference, doc: OpenrpcDocument
   const params = method.params as ContentDescriptorObject[];
 
   for (const p of params) {
-    p.schema = await handleSchemaWithSchemaComponents(p.schema, componentSchemas);
+    p.schema = await handleSchemaWithSchemaComponents(
+      p.schema,
+      componentSchemas
+    );
   }
 
   if (method.result !== undefined) {
     const result = method.result as ContentDescriptorObject;
-    result.schema = await handleSchemaWithSchemaComponents(result.schema, componentSchemas);
+    result.schema = await handleSchemaWithSchemaComponents(
+      result.schema,
+      componentSchemas
+    );
   }
 
   return method;
@@ -439,12 +529,14 @@ const handleMethod = async (methodOrRef: MethodOrReference, doc: OpenrpcDocument
  * ```
  *
  */
-export default async function dereferenceDocument(openrpcDocument: OpenRPC, resolver: ReferenceResolver = referenceResolver): Promise<OpenRPC> {
+export default async function dereferenceDocument(
+  openrpcDocument: OpenRPC,
+  resolver: ReferenceResolver = referenceResolver
+): Promise<OpenRPC> {
   let derefDoc = { ...openrpcDocument };
 
   derefDoc = await handleSchemaComponents(derefDoc);
   derefDoc = await handleSchemasInsideContentDescriptorComponents(derefDoc);
-
 
   const definitionsMap = createDefinitionsMap(metaSchema);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -454,10 +546,17 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
 
   if (derefDoc["x-extensions"]) {
     for (const extension of derefDoc["x-extensions"]) {
-      const derefedExtension = await handleExtension(extension, derefDoc, resolver);
+      const derefedExtension = await handleExtension(
+        extension,
+        derefDoc,
+        resolver
+      );
       extensions.push(derefedExtension);
-      for (const def of derefedExtension.restricted){
-        extensionDerefs.push({extensionName: derefedExtension.name, docNames: resolveDefinition(definitionsMap, def)});
+      for (const def of derefedExtension.restricted) {
+        extensionDerefs.push({
+          extensionName: derefedExtension.name,
+          docNames: resolveDefinition(definitionsMap, def),
+        });
       }
     }
     derefDoc["x-extensions"] = extensions;
@@ -472,7 +571,7 @@ export default async function dereferenceDocument(openrpcDocument: OpenRPC, reso
   for (const extension of extensionDerefs) {
     for (const docName of extension.docNames) {
       const { items } = getDoc(docName, derefDoc);
-      
+
       // Process all matching items that have the extension
       for (const item of items) {
         if (item && item[extension.extensionName]) {

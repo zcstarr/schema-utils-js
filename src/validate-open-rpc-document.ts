@@ -54,17 +54,19 @@ export default function validateOpenRPCDocument(
   const ajv = new Ajv();
   ajv.addSchema(JsonSchemaMetaSchema, "https://meta.json-schema.tools");
   let extMetaSchema = getExtendedMetaSchema();
-  extMetaSchema = applyExtensionSpec(document, extMetaSchema)
-try {
+  extMetaSchema = applyExtensionSpec(document, extMetaSchema);
+  try {
     ajv.validate(extMetaSchema, document);
   } catch (e) {
-    throw new Error([
-      'schema-utils-js: Internal Error',
-      '-----',
-      e,
-      '-----',
-      'If you see this report it: https://github.com/open-rpc/schema-utils-js/issues',
-    ].join('\n'));
+    throw new Error(
+      [
+        "schema-utils-js: Internal Error",
+        "-----",
+        e,
+        "-----",
+        "If you see this report it: https://github.com/open-rpc/schema-utils-js/issues",
+      ].join("\n")
+    );
   }
 
   if (ajv.errors) {

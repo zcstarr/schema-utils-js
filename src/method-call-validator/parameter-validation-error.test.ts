@@ -10,12 +10,22 @@ describe("ParameterValidationError", () => {
   } as ErrorObject;
 
   it("can be instantiated", () => {
-    const error = new ParameterValidationError(1, { type: "number" }, "hey mom", [errorObj]);
+    const error = new ParameterValidationError(
+      1,
+      { type: "number" },
+      "hey mom",
+      [errorObj]
+    );
     expect(error).toBeInstanceOf(ParameterValidationError);
   });
 
   it("works when passed an object key instead of array index", () => {
-    const error = new ParameterValidationError("foo", { type: "number" }, "hey mom", [errorObj]);
+    const error = new ParameterValidationError(
+      "foo",
+      { type: "number" },
+      "hey mom",
+      [errorObj]
+    );
     expect(error).toBeInstanceOf(ParameterValidationError);
   });
 });
